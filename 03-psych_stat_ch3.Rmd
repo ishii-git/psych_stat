@@ -1,0 +1,845 @@
+# 第3章 相関関係の把握と回帰分析 {-}
+
+## 3.1.1 共分散と相関係数(p.43-45)  {-} 
+
+- 教科書図3-1をRで描いてみましょう。  
+- 図1-3の逸脱行動得点データを`dat`というオブジェクトに読み込みます(「psych_stat」にある「psych_stat.Rproj」ファイルからRStudioを起動してください)。  
+
+```{r}
+dat <- read.csv(file = "data/itsudatsu_data.csv")
+```  
+
+- `dat`の先頭行を確認します。  
+
+```{r}
+head(dat)
+```  
+
+- 図3-1では男子のデータをプロットしているので，`dat`から男子の行のみを抽出します。  
+- `dat`の`sex`列が性別を表し，1が男子，2が女子を意味します。  
+- 男子のデータをプロットするので，`subset()`関数を使って，`dat`から`sex`列が1の行のみ抽出します。
+
+<div class="alert alert-info">
+- データフレームから特定の行を抽出するには，`subset()`関数を使用します。  
+- `subset()`関数は，`subset(データフレーム, 条件式)`という使い方をします。  
+- 条件式には比較演算子や論理理演算子を使って指定することがあります。  
+  - `sex`列の値が1と指定するときには，`sex == 1`と指定します。  
+  - `==`は`等しい`を表します。  
+  - 他にも，比較演算子や論理理演算子を用いることで特定の値よりも大きいか小さいか，ある文字列に一致するかしないかなどを確認できます。  
+</div>   
+
+- 男子の行を`dat_M`というオブジェクトに代入しましょう。  
+
+```{r}
+dat_M <- subset(dat, sex == 1)
+```  
+
+- `dat_M`を確認すると，`sex`列が1の行のみが抽出されていることが確認できます。  
+
+```{r}
+dat_M
+```  
+
+- 図3-1をプロットしていきましょう。  
+- 図3-1は，x軸に小6の時の逸脱行動得点，y軸に中2の時の逸脱行動得点をプロットしています。  
+
+<div class="alert alert-info">
+- 散布図を描くには，`plot()`関数を使います。  
+- `plot(x軸の値, y軸の値)`で2変数の散布図を描くことができます。
+  - `dat_M`から小6の時の逸脱行動得点のみを取り出す場合には，`$`記号を使います。詳しくは以前配布したスライドを確認してください。`$`記号で，列名による列抽出ができます。  
+</div>   
+
+```{r fig.align="center"}
+plot(dat_M$Grade_6th, dat_M$Grade_8th)
+```  
+
+- 図3-1と見た目を揃えます。  
+
+<div class="alert alert-info">
+- 実行する際には，`plot()`関数を必ず先に実行するようにしてください。`abline()`関数は`plot()`でできた図の上に線を上書きする関数です。  
+- Macだとプロットするときに日本語が文字化けすることがあります。その時は，`par(family= "HiraKakuProN-W3")`というコードを入力し実行してから，再度`plot()`関数を実行してください。  
+</div>  
+
+```{r fig.align="center"}
+plot(dat_M$Grade_6th, dat_M$Grade_8th, 
+     pch = 16,
+     xlim = c(0, 22), 
+     ylim = c(0,22), 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xaxp = c(0, 22, 11),
+     yaxp = c(0, 22, 11),
+     xlab = "小6の時の逸脱行動得点x",
+     ylab = "中2の時の逸脱行動得点y")
+abline(h = mean(dat_M$Grade_6th), v = mean(dat_M$Grade_8th))
+```  
+
+<br>
+<br>
+
+- (3.1)式に基づいて共分散を計算してみましょう。  
+- 共分散は以下の式で定義されました。  
+
+$$
+s _{xy} = \frac{1}{N} \sum ^{N} _{i = 1} (x _{i} - \bar{x})(y _{i} - \bar{y})\tag{3.1}\\
+$$  
+
+- 逸脱行動データにおいては，$x$が小6の時の逸脱行動得点，$y$が中2の時の逸脱行動得点を表します。
+- まずは$\bar{x}$を求めましょう。  
+
+```{r}
+mean(dat_M$Grade_6th)
+```  
+
+- 同様に$\bar{y}$も求めます。  
+
+```{r}
+mean(dat_M$Grade_8th)
+```  
+
+- Rではベクトルで一度に計算を行うことができます。それぞれのデータから，$\bar{x}$，$\bar{y}$を引きます。  
+- 引き算した結果をそれぞれ`hensa_x`，`hensa_y`というオブジェクトに代入します。  
+
+```{r}
+hensa_x <- dat_M$Grade_6th - mean(dat_M$Grade_6th)
+hensa_y <- dat_M$Grade_8th - mean(dat_M$Grade_8th)
+hensa_x
+hensa_y
+```  
+
+- (3.1)式に基づいて，`hensa_x`と`hensa_y`をかけます。  
+
+```{r}
+hensa_x * hensa_y
+```  
+
+- 最後に平均を取ることで，共分散を計算することができます。  
+
+```{r}
+mean(hensa_x * hensa_y)
+```  
+
+- 教科書では小数点を丸めていますが，同じ値が得られました。  
+
+<br>
+<br>
+
+- (3.2)式で定義される不偏共分散も同様に計算してみましょう。  
+- $N$はデータの個数を表し，今回のデータでは$N = 20$です。
+
+```{r}
+sum(hensa_x * hensa_y) / (20 - 1)
+```  
+
+- Rには共分散を求めることのできる`cov`関数があります。  
+
+<div class="alert alert-info">
+- `cov()`関数は，`cov(x, y)`という使い方をします。  
+- `x`，`y`にはそれぞれ変数を入れます。  
+</div>  
+
+```{r}
+cov(dat_M$Grade_6th, dat_M$Grade_8th)
+```  
+
+- (3.2)式で計算した値と一致したことから，Rの`cov()`関数は**不偏共分散**を計算する関数であることが確認できました。  
+
+## 3.1.2 共分散から相関係数へ(p.47-48) {-}  
+
+- 相関係数は以下の(3.4)式で定義されます。  
+
+$$
+r = \frac{s _{xy}}{s _{x} s_{y}} \tag{3.4}\\
+$$  
+
+- 男子の小6のときの逸脱行動得点と中2のの時の逸脱行動得点の相関係数を計算してみましょう。  
+- `x`の標準偏差$s _{x}$を`sd_x`，`y`の標準偏差$s _{y}$を`sd_y`というオブジェクトに代入します。  
+- 先ほど計算した`hensa_x`，`hensa_y`の結果を利用します。  
+- 計算結果は`soukan`というオブジェクトに代入します。  
+
+
+```{r}
+sd_x <- sqrt(mean(hensa_x ^2))
+sd_y <- sqrt(mean(hensa_y ^2))
+soukan <- mean(hensa_x * hensa_y) / (sd_x * sd_y)
+soukan
+```  
+
+- 教科書と同様の結果が計算できました。  
+
+<br>
+<br>
+
+- Rには相関係数を計算する`cor()`関数があります。  
+- `cor()`関数を使って相関係数を計算してみます。`cor()`関数は，`cov()`関数と同じ使い方をします。  
+
+```{r}
+cor(dat_M$Grade_6th, dat_M$Grade_8th)
+```  
+
+
+## 3.2.1 逸脱行動データへの適応(p.55-57) {-}  
+
+- 教科書(3.11)式は回帰直線と呼ばれます。  
+
+$$
+\hat{y} = a + bx \tag{3.11}\\
+$$  
+
+- (3.12)式で定義される最小2乗基準$Q$を最小化する$a$，$b$の値は(3.13)式，(3.14)式になります。  
+
+$$
+\begin{align}
+b &= r \frac{s _{x}}{s _{y}}\tag{3.13}\\
+a &= \bar{y} - b \bar{x} \tag{3.14}\\
+\end{align}
+$$  
+
+- $a$，$b$は回帰直線の切片と傾きを表します。  
+
+<br>
+<br>
+
+- 男子の逸脱行動データ(`dat_M`)で$a$，$b$を計算してみましょう。  
+
+- 共分散$s _{xy}$と変数$x$の標準偏差$s _{x}$，変数$y$の標準偏差$s_{y}$は先ほど計算した`soukan`，`sd_x`，`sd_y`を使います。  
+
+
+```{r}
+b_M <- soukan * (sd_y / sd_x)
+b_M
+a_M  <- mean(dat_M$Grade_8th) - (b_M * mean(dat_M$Grade_6th))
+a_M
+```  
+
+- $\hat{y}$ = `r round(a_M,2)` + `r round(b_M,2)`$x$という結果になりました。  
+- 数値を丸めているので教科書の値と完全に一致しませんが，同様の値が得られていることがわかります(教科書p.56の注6)を確認しください)。  
+
+<br>
+<br>
+
+- 同様に女子の逸脱行動データでも$a$と$b$を計算します。  
+- 女子の逸脱行動データを`dat_F`というオブジェクトに代入します。  
+
+```{r}
+dat_F <- subset(dat, sex == 2)
+```  
+
+- 標準偏差と相関係数を計算します。  
+
+```{r}
+hensa_x_F <- dat_F$Grade_6th - mean(dat_F$Grade_6th)
+hensa_y_F <- dat_F$Grade_8th - mean(dat_F$Grade_8th)
+sd_x_F <- sqrt(mean(hensa_x_F ^2))
+sd_y_F <- sqrt(mean(hensa_y_F ^2))
+sd_x_F
+sd_y_F
+cor(dat_F$Grade_6th, dat_F$Grade_8th)
+```  
+
+- $a$，$b$を計算します。  
+
+```{r}
+b_F <- cor(dat_F$Grade_6th, dat_F$Grade_8th) *(sd_y_F / sd_x_F)
+b_F
+a_F <- mean(dat_F$Grade_8th) - (b_F * mean(dat_F$Grade_6th))
+a_F
+```  
+
+- 回帰直線は$\hat{y}$ = `r round(a_F,2)` + `r round(b_F,2)`$x$になります。    
+- 教科書と同様の結果が得られることを確認してください。  
+
+<br>
+<br>
+
+- 図3-5を実際に書いてみましょう。   
+- まずは男子のデータで散布図を描き，その上に回帰直線を追加します。
+- 図3-1で使用したコードを使って描いていきます。  
+
+<div class="alert alert-info">
+- `plot()`関数で描いた図に線を上書きする`abline()`関数を使います。  
+  - 図3-1では引数で`h`と`v`に値を指定しました。`h`と`v`はそれぞれ水平線(horizontal line)，垂直線(vertical line)を引くための引数です。  
+  - 今回は傾きと切片がある線を引くので，引数の`a`と`b`を使います。`a`と`b`にそれぞれ切片と傾きの値を与えることで線を引くことができます(`?abline`とコンソールに入力することでヘルプを確認できます)。  
+</div> 
+
+```{r fig.align="center"}
+plot(dat_M$Grade_6th, dat_M$Grade_8th, 
+     pch = 16,
+     xlim = c(0, 22), 
+     ylim = c(0,22), 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xaxp = c(0, 22, 11),
+     yaxp = c(0, 22, 11),
+     xlab = "小6の時の逸脱行動得点x",
+     ylab = "中2の時の逸脱行動得点y",
+     main =  "男子の逸脱行動得点")
+abline(a = a_M, b = b_M)
+```  
+
+- 同様に女子のデータをプロットします。  
+
+```{r fig.align="center"}
+plot(dat_F$Grade_6th, dat_F$Grade_8th, 
+     pch = 2,
+     xlim = c(0, 22), 
+     ylim = c(0,22), 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xaxp = c(0, 22, 11),
+     yaxp = c(0, 22, 11),
+     xlab = "小6の時の逸脱行動得点x",
+     ylab = "中2の時の逸脱行動得点y",
+     main =  "女子の逸脱行動得点")
+abline(a = a_F, b = b_F)
+```  
+
+- `plot()`関数の引数`pch`で散布図のマーカーを三角に変更しています。`abline()`関数では，女子のデータで計算した結果`a_F`と`b_F`を傾きと切片に指定しています。  
+
+- 男子と女子のデータを1つの図にプロットします。  
+- 男子のマーカーと回帰直線は赤色に変更しています。  
+
+```{r fig.align = "center"}
+plot(0, 0, 
+     type = "n",
+     xlim = c(0, 22), 
+     ylim = c(0,22), 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xaxp = c(0, 22, 11),
+     yaxp = c(0, 22, 11),
+     xlab = "小6の時の逸脱行動得点x",
+     ylab = "中2の時の逸脱行動得点y")
+
+points(dat_M$Grade_6th, dat_M$Grade_8th,
+       pch = 16, col = "red")
+points(dat_F$Grade_6th, dat_F$Grade_8th,
+       pch = 2)
+abline(a = a_M, b = b_M,
+       col = "red")
+abline(a = a_F, b = b_F)
+
+legend("bottomright", 
+       legend = c("男子", "女"),
+       pch = c(16, 2),
+       col = c("red", "black"))
+```  
+
+- 男女の逸脱行動データの散布図に，それぞれの回帰直線$\hat{y}$ = `r round(a_M,2)` + `r round(b_M,2)`$x$と$\hat{y}$ = `r round(a_F,2)` + `r round(b_F,2)`$x$が書き込まれていることを確認してください。  
+
+<br>
+<br>
+
+- ここまで(3.13)式，(3.14)式を使って回帰直線の傾きと切片を計算しました。  
+- Rには回帰分析を行う関数として`lm()`関数が備わっています(`lm`はliner model(線形モデル)の頭文字です)。  
+<br>
+- `lm()`関数を使って回帰直線を求めてみましょう。  
+
+<div class="alert alert-info">
+- `lm()`関数では`formula`というクラスのオブジェクトを使ってモデル式を指定します。
+  - `formula`オブジェクトでは独立変数と従属変数を`~`(チルダ)でつなぎ，`従属変数 ~ 独立変数`という書き方をします。  
+  - 今回のデータでは，小6のときの逸脱行動得点から中2の時の逸脱行動得点を予測するので，`Grade_8th ~ Grade_6th`となります。  
+</div>  
+
+- `lm()`関数を使って回帰分析を行った結果をそれぞれ`fit_M`，`fit_F`というオブジェクトに代入します。  
+  - `lm()`関数の引数`data`で使うデータフレームを指定します。今回`dat_M`と`dat_F`では使用している列名が同じなので，どちらも`formula`オブジェクト内では同じ列名(`Grade_8th`と`Grade_6th`)を使用しています。  
+  
+
+```{r}
+fit_M <- lm(Grade_8th ~ Grade_6th, data = dat_M)
+fit_F <- lm(Grade_8th ~ Grade_6th, data = dat_F)
+fit_M
+fit_F
+```  
+
+- 回帰係数を確認するには`Coefficients`を確認します。  
+- 切片$a$は`Intercept`，傾き$b$は`Grade_6th`の値を読み取ります。  
+<br>
+- より詳しい分析結果を確認するには，分析結果を代入したオブジェクトに対して`summary()`関数を適用します。  
+
+```{r}
+summary(fit_M)
+summary(fit_F)
+```  
+
+- 回帰係数は，先ほどと同様に`Coefficients`の`Estimate`行の値を確認してください。  
+- それぞれの回帰直線$\hat{y}$ = `r round(a_M,2)` + `r round(b_M,2)`$x$と$\hat{y}$ = `r round(a_F,2)` + `r round(b_F,2)`$x$と値が一致していることが確認できます。  
+
+<br>
+
+- 実際に回帰分析を実行するには`lm()`関数の結果に対して`summary()`関数を適用するのを忘れないようにしてください。  
+- 重回帰分析や共分散分析も`lm()`関数を使って計算することができます(分散分析も`lm()`関数を使って計算する方法があります)。  
+
+## 3.3.1 予測値と残差の平均と相関(p.57-58) {-}  
+
+- 独立変数$x$と残差$e$をプロットした図3-6を作成します。  
+<br>
+
+- 男子の逸脱行動データの残差を計算しましょう。  
+- 残差$e$は(3.17)式で計算します。  
+
+$$
+e = y - \hat{y} \tag{3.17}\\
+$$  
+
+- 3.2.1で計算した`a_M`と`b_M`の結果を使います。$\hat{y}$を`pred_M`というオブジェクトに代入します。  
+- 変数$y$である`dat_M$Grade_8th`から，予測値$\hat{y}$を引いた結果(残差$e$)を`e_M`というオブジェクトに代入します。  
+
+```{r}
+pred_M <- a_M + (b_M * dat_M$Grade_6th)
+e_M <- dat_M$Grade_8th - pred_M
+e_M
+```  
+
+- `plot()`関数を使って，独立変数$x$と残差$e$をプロットします。  
+
+```{r fig.align="center"}
+plot(dat_M$Grade_6th, e_M, 
+     pch = 16,
+     xlim = c(0, 22), 
+     ylim = c(-5,5), 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xaxp = c(0, 22, 11),
+     yaxp = c(-5, 5, 10),
+     xlab = "小6の時逸脱行動得点x",
+     ylab = "残差e")
+abline(h = 0)
+```  
+
+- (3.19)式，(3.20)式の関係が成り立っているか確認します。  
+
+```{r}
+cor(dat_M$Grade_6th, e_M)
+cor(pred_M, e_M)
+```  
+
+- 数字の後に`e-1...`のように表示されているときには非常に小さい値を意味します(`r cor(dat_M$Grade_6th, e_M)`であれば，5.370689$\times$10の-17乗を意味します)。  
+
+<div class="alert alert-info">
+- 数値を丸めるには`round()`関数を使います。  
+- `round(数値,桁数)`で指定した桁数に数値を丸めます。  
+</div>  
+
+```{r}
+round(cor(dat_M$Grade_6th, e_M), 3)
+round(cor(pred_M, e_M), 3)
+```  
+
+- 変数$x$(`dat_M$Grade_6th`)と残差，予測値$\hat{y}$(`pred_M`)と残差のどちらも相関が0であることが確認できました。  
+
+<br>
+<br>
+
+- 残差`e_M`はデータ$y _{i}$から予測値$\hat{y}$を引くことで計算しました。  
+- 残差は`lm()`関数の計算結果の中に含まれています。  
+  - `fit_M`の中にある変数`residuals`を確認すると，先ほど計算した`e_M`と同じ値が格納されていることがわかります。  
+  - residualsは残差という意味です。  
+
+```{r}
+fit_M$residuals
+e_M
+```  
+
+- また，予測値$\hat{y}$(`pred_M`)も，`a_M`と`b_M`を使って計算しましたが，`fit_M`の中の`fitted.values`という変数に格納されています。  
+
+```{r}
+fit_M$fitted.values
+pred_M
+```  
+
+## 3.3.2 予測値と残差の分散(p.60-62) {-}  
+
+- 男子の逸脱行動データを使って，(3.23)式，(3.24)式が成り立つか確認します。  
+<br>
+- $s _{\hat{y}} ^{2}$
+
+```{r}
+mean((pred_M - mean(pred_M))^2)
+```  
+
+- $s _{y} ^{2} r ^{2}$  
+
+```{r}
+mean((dat_M$Grade_8th - mean(dat_M$Grade_8th))^2) * (cor(dat_M$Grade_6th, dat_M$Grade_8th) ^2)
+```  
+
+- $s _{e}^{2}$  
+
+```{r}
+mean((e_M - mean(e_M))^2)
+```  
+
+- $s _{y} ^{2}(1 - r ^{2})$
+
+```{r}
+mean((dat_M$Grade_8th - mean(dat_M$Grade_8th))^2) * (1 - (cor(dat_M$Grade_6th, dat_M$Grade_8th) ^2))
+```  
+
+- どちらも成り立っていることが確認できました。  
+<br>
+
+- よって，分散説明率(決定係数は)以下のコードで計算できます。    
+
+```{r}
+cor(dat_M$Grade_6th, dat_M$Grade_8th) ^2
+```  
+
+- `lm()`関数の計算結果にも決定係数が表示されています。  
+
+```{r}
+summary(fit_M)
+```  
+
+- `Multiple R-squared`のところを確認すると`0.3581`と同様の結果が表示されています。  
+
+## 3.3.3 予測の標準誤差(p.62-63) {-}  
+
+- (3.26)式で定義される予測の標準誤差を計算します。  
+
+$$
+s ^{\prime} _{e} = s _{e} \sqrt{N / (N-2)} \tag{3.26}\\
+$$  
+
+- ただし，$s _{e}$は以下の(3.25)式で表されます。  
+
+$$
+s _{e} = s _{y} \sqrt{1 - r ^{2}} \tag{3.25}\\
+$$  
+
+- (3.25)式に基づく予測の標準誤差  
+
+```{r}
+s_e <- sqrt(mean((dat_M$Grade_8th - mean(dat_M$Grade_8th))^2)) * sqrt((1 - cor(dat_M$Grade_6th, dat_M$Grade_8th) ^2))
+s_e
+```  
+
+- (3.26)式に基づく予測の標準誤差  
+
+```{r}
+s_e * sqrt((20 / (20 - 2)))
+```  
+
+- 教科書と同様の結果が確認できました。  
+<br>
+
+- (3.26)式に基づく予測の標準誤差は`lm()`関数を使った計算結果でも確認することができます。  
+
+```{r}
+summary(fit_M)
+```  
+
+- `Residual standard error`のところに，`3.219`と同様の結果が表示されています。  
+
+## 3.4.1 選抜による集団の等質性の変化の影響(p.69-72) {-}  
+
+- シミュレーションで図3-8の知能指数の例(ゴルトンの研究)のデータを作成します。シミュレーションで作成するので，<u>**図3-8に完全に一致しません**</u>     
+- `sim_cor`というオブジェクトにデータを代入します。  
+
+```{r}
+set.seed(1234)
+library(MASS)
+sim_cor <- mvrnorm(200, mu = c(100, 100), Sigma = matrix(c(15*15, 15*15*0.6, 15*15*0.6, 15*15), ncol = 2))
+sim_cor <- data.frame(father = round(sim_cor[,1]), son = round(sim_cor[,2]))
+```  
+
+- `sim_cor`を確認します。  
+
+```{r}
+head(sim_cor)
+```  
+
+- `father`列は父親の知能指数，`son`列は息子の知能指数を表します。  
+<br>
+
+- `sim_cor`をプロットします。  
+
+
+```{r fig.align="center"}
+plot(sim_cor$father, sim_cor$son, 
+     pch = 16,
+     xlim = c(55, 145), 
+     ylim = c(55,145), 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xaxp = c(55, 145, 6),
+     yaxp = c(55, 145, 6),
+     xlab = "父親の知能指数x",
+     ylab = "息子の知能指数y")
+```  
+
+- 教科書の例と個々の値は異なりますが，全体的な傾向は一致していることが確認できます。  
+
+- `lm()`関数を使って回帰係数を求めてみましょう。  
+- 計算結果は`sim_yhat`というオブジェクトに代入します。  
+  - 父親の知能指数$x$が独立変数，息子の知能指数$y$が従属変数になります。  
+
+```{r}
+fit_yhat <- lm(son ~ father, data = sim_cor)
+summary(fit_yhat)
+```  
+
+- シミュレーションによる値なので，解析的に求めた教科書の値とは異なります。  
+
+- `lm()`関数の結果を先ほどの図に上書きします。息子の知能指数の平均(約100)を点線で書き入れています。    
+
+```{r fig.align="center"}
+plot(sim_cor$father, sim_cor$son, 
+     pch = 16,
+     xlim = c(55, 145), 
+     ylim = c(55,145), 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xaxp = c(55, 145, 6),
+     yaxp = c(55, 145, 6),
+     xlab = "父親の知能指数x",
+     ylab = "息子の知能指数y")
+abline(fit_yhat)
+abline(h = mean(sim_cor$son), lty = 2)
+```  
+
+- 平均への回帰が確認できます。   
+
+<br>
+<br>
+
+- 父親の知能指数が100以上のデータをプロットした図3-9を作成します。  
+- `sim_cor`から父親の知能指数が100以上のデータを`subset()`関数を使って選抜します。  
+
+<div class="alert alert-info">
+- データフレームから特定の値に従って行を選抜するには，`subset()`関数を使用します。  
+- 「～～以上」を表す比較演算子は`>=`です。
+</div>  
+
+```{r}
+sim_cor_100over <- subset(sim_cor, sim_cor$father >= 100)
+head(sim_cor_100over)
+```  
+
+- 選抜した値をプロットします。  
+
+
+```{r fig.align="center"}
+plot(sim_cor_100over$father, sim_cor_100over$son, 
+     pch = 16,
+     xlim = c(55, 145), 
+     ylim = c(55,145), 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xaxp = c(55, 145, 6),
+     yaxp = c(55, 145, 6),
+     xlab = "父親の知能指数x",
+     ylab = "息子の知能指数y")
+```  
+
+- `lm()`関数を使って選抜後のデータの回帰係数を求めます。  
+
+```{r}
+fit_100over <- lm(son ~ father, data = sim_cor_100over)
+summary(fit_100over)
+```  
+
+- 選抜前の結果と比較します。  
+
+```{r}
+summary(fit_yhat)
+```  
+
+-  回帰係数の値はほとんど一致しています。  
+<br>
+
+- 2つの推定結果をプロットします。  
+
+```{r fig.align="center"}
+plot(sim_cor_100over$father, sim_cor_100over$son, 
+     pch = 16,
+     xlim = c(55, 145), 
+     ylim = c(55,145), 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xaxp = c(55, 145, 6),
+     yaxp = c(55, 145, 6),
+     xlab = "父親の知能指数x",
+     ylab = "息子の知能指数y")
+abline(fit_yhat, lty = 2)
+abline(fit_100over, lty = 1)
+legend("bottomright", 
+       legend = c("選抜前", "選抜後"),
+       lty = c(2, 1))
+```  
+
+- 2つの直線がほぼ一致していることがわかります。  
+
+<br>
+<br>
+
+- 選抜する前後の相関係数を比較します。    
+
+```{r}
+cor(sim_cor$father, sim_cor$son)
+cor(sim_cor_100over$father, sim_cor_100over$son)
+```  
+
+- シミュレーションによる値なので教科書とは異なりますが，値が大きく低下していることがわかります。  
+
+<br>
+<br>
+
+- 選抜前後での統計的指標の値の変化を確認しましょう。  
+
+- $x$の平均  
+
+```{r}
+mean(sim_cor$father)
+mean(sim_cor_100over$father)
+```  
+
+- $y$の平均  
+
+```{r}
+mean(sim_cor$son)
+mean(sim_cor_100over$son)
+```  
+
+- $x$の標準偏差  
+
+```{r}
+sqrt(mean((sim_cor$father - mean(sim_cor$father))^2))
+sqrt(mean((sim_cor_100over$father - mean(sim_cor_100over$father))^2))
+```  
+
+- $y$の標準偏差  
+
+```{r}
+sqrt(mean((sim_cor$son - mean(sim_cor$son))^2))
+sqrt(mean((sim_cor_100over$son - mean(sim_cor_100over$son))^2))
+```  
+
+- 相関係数  
+
+```{r}
+cor(sim_cor$father, sim_cor$son)
+cor(sim_cor_100over$father, sim_cor_100over$son)
+```  
+
+- 回帰係数$b$  
+
+```{r}
+fit_yhat$coefficients
+fit_100over$coefficients
+```  
+
+- 回帰係数$b ^{\prime}$  
+
+```{r}
+cor(sim_cor$father, sim_cor$son) * (sqrt(mean((sim_cor$father - mean(sim_cor$father))^2)) / sqrt(mean((sim_cor$son - mean(sim_cor$son))^2)))
+cor(sim_cor_100over$father, sim_cor_100over$son) * (sqrt(mean((sim_cor_100over$father - mean(sim_cor_100over$father))^2)) / sqrt(mean((sim_cor_100over$son - mean(sim_cor_100over$son))^2)))
+```  
+
+
+## 演習問題 {-}  
+
+### 問題1  {-}  
+
+- 以下の`x`と完全な正の相関があるデータを作成し，`y`というオブジェクトに代入してください(答えは1つではありません)。  
+
+```{r}
+x <- c(4, 6, 7, 9, 10, 12, 13, 14, 15, 16,18 ,20)
+x
+```  
+
+```{r}
+
+
+```  
+
+### 問題2 {-}  
+
+- `plot()`関数を使って，`x`と問題1で作成した`y`をプロットしてください。  
+
+```{r}
+
+
+```  
+
+### 問題3 {-}  
+
+- `x` と`y`の共分散を計算してください。  
+
+```{r}
+
+
+```  
+
+### 問題4 {-}  
+
+- 教科書p.46を確認しながら，問題3で求めた共分散$s _{xy}$がそれぞれの標準偏差$s _{x}$と$s _{y}$の掛け算に一致するか確認してください。  
+
+```{r}
+
+
+```    
+
+### 問題5 {-}  
+
+- `x`と`y`の相関係数を求めてください。  
+
+```{r}
+
+
+```  
+
+### 問題6 {-}  
+
+- 以下の`x_old`に対して，それぞれの値を2倍して3を足す線形変換をおこない，`x_new`というオブジェクトに代入してください。  
+- 同様に，`y_old`に対して，3倍して10を足す線形変換を行い，`y_new`というオブジェクトに代入してください。  
+  - 解答を提出する際には，代入を行うコードの後にオブジェクト名を入力して中身がわかるようにしてください。  
+
+```{r}
+x_old <- c(3, 5, 2, 11, 17, 21, 20)
+y_old <- c(6, 11, 3, 17, 26, 12, 5)
+```  
+
+```{r}
+
+
+
+```  
+
+### 問題7 {-}  
+
+- `x_new`と`y_new`の共分散を計算してください。  
+
+```{r}
+
+
+```  
+
+### 問題8 {-}  
+
+- 教科書p.50の(3.8)式を確認し，問題7で計算した線形変換後の共分散$s _{x ^{\prime} y ^{\prime}}$が(3.8)式の関係(今回の問題では$c = 2, k = 3$)になっているか確認してください。  
+
+```{r}
+
+
+```  
+
+### 問題9 {-}  
+
+- 教科書p.50の(3.9)式を参考に，$r _{x ^{\prime} y ^{\prime}}$と$r _{xy}$をそれぞれ計算してください(絶対値記号はつけなくてかまいません。つけたい場合には計算結果に対して`abs()`関数をあてはめてください)。  
+
+```{r}
+
+
+```  
+
+

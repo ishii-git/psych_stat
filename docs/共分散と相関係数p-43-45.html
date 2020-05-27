@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.1.1 共分散と相関係数(p.43-45) | 心理統計学の基礎</title>
+  <meta name="description" content="3.1.1 共分散と相関係数(p.43-45) | 心理統計学の基礎" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.1.1 共分散と相関係数(p.43-45) | 心理統計学の基礎" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.1.1 共分散と相関係数(p.43-45) | 心理統計学の基礎" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="第3章-相関関係の把握と回帰分析.html"/>
+<link rel="next" href="共分散から相関係数へp-47-48.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">心理統計学の基礎</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>本サイトについて</a></li>
+<li class="chapter" data-level="" data-path="第2章-分布の記述的指標とその性質.html"><a href="第2章-分布の記述的指標とその性質.html"><i class="fa fa-check"></i>第2章 分布の記述的指標とその性質</a><ul>
+<li class="chapter" data-level="" data-path="中央値p-19-20.html"><a href="中央値p-19-20.html"><i class="fa fa-check"></i>2.1.1 中央値(p.19-20)</a></li>
+<li class="chapter" data-level="" data-path="平均p-20-23.html"><a href="平均p-20-23.html"><i class="fa fa-check"></i>2.1.2 平均(p.20-23)</a></li>
+<li class="chapter" data-level="" data-path="逸脱行動データの代表値p-24-25.html"><a href="逸脱行動データの代表値p-24-25.html"><i class="fa fa-check"></i>2.1.3 逸脱行動データの代表値(p.24-25)</a></li>
+<li class="chapter" data-level="" data-path="合成変数の平均p-25-26.html"><a href="合成変数の平均p-25-26.html"><i class="fa fa-check"></i>2.1.4 合成変数の平均(p.25-26)</a></li>
+<li class="chapter" data-level="" data-path="合併した集団における平均p-26-27.html"><a href="合併した集団における平均p-26-27.html"><i class="fa fa-check"></i>2.1.5 合併した集団における平均(p.26-27)</a></li>
+<li class="chapter" data-level="" data-path="平均偏差p-28-29.html"><a href="平均偏差p-28-29.html"><i class="fa fa-check"></i>2.2.1 平均偏差(p.28-29)</a></li>
+<li class="chapter" data-level="" data-path="分散と標準偏差p-30-31.html"><a href="分散と標準偏差p-30-31.html"><i class="fa fa-check"></i>2.2.2 分散と標準偏差(p.30-31)</a></li>
+<li class="chapter" data-level="" data-path="不偏分散p-31-32.html"><a href="不偏分散p-31-32.html"><i class="fa fa-check"></i>2.2.3 不偏分散(p.31-32)</a></li>
+<li class="chapter" data-level="" data-path="合成変数の分散p-34-36.html"><a href="合成変数の分散p-34-36.html"><i class="fa fa-check"></i>2.2.4 合成変数の分散(p.34-36)</a></li>
+<li class="chapter" data-level="" data-path="合併した集団における分散p-36-37.html"><a href="合併した集団における分散p-36-37.html"><i class="fa fa-check"></i>2.2.5 合併した集団における分散(p.36-37)</a></li>
+<li class="chapter" data-level="" data-path="線形変換に伴う指標値の変化p-38.html"><a href="線形変換に伴う指標値の変化p-38.html"><i class="fa fa-check"></i>2.3.1 線形変換に伴う指標値の変化(p.38)</a></li>
+<li class="chapter" data-level="" data-path="変数の標準化p-38-39.html"><a href="変数の標準化p-38-39.html"><i class="fa fa-check"></i>2.3.2 変数の標準化(p.38-39)</a></li>
+<li class="chapter" data-level="" data-path="標準偏差の解釈についてp-40-41.html"><a href="標準偏差の解釈についてp-40-41.html"><i class="fa fa-check"></i>2.3.3 標準偏差の解釈について(p.40-41)</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html"><i class="fa fa-check"></i>2.3 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題5"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題6"><i class="fa fa-check"></i>問題6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第3章-相関関係の把握と回帰分析.html"><a href="第3章-相関関係の把握と回帰分析.html"><i class="fa fa-check"></i>第3章 相関関係の把握と回帰分析</a><ul>
+<li class="chapter" data-level="" data-path="共分散と相関係数p-43-45.html"><a href="共分散と相関係数p-43-45.html"><i class="fa fa-check"></i>3.1.1 共分散と相関係数(p.43-45)</a></li>
+<li class="chapter" data-level="" data-path="共分散から相関係数へp-47-48.html"><a href="共分散から相関係数へp-47-48.html"><i class="fa fa-check"></i>3.1.2 共分散から相関係数へ(p.47-48)</a></li>
+<li class="chapter" data-level="" data-path="逸脱行動データへの適応p-55-57.html"><a href="逸脱行動データへの適応p-55-57.html"><i class="fa fa-check"></i>3.2.1 逸脱行動データへの適応(p.55-57)</a></li>
+<li class="chapter" data-level="" data-path="予測値と残差の平均と相関p-57-58.html"><a href="予測値と残差の平均と相関p-57-58.html"><i class="fa fa-check"></i>3.3.1 予測値と残差の平均と相関(p.57-58)</a></li>
+<li class="chapter" data-level="" data-path="予測値と残差の分散p-60-62.html"><a href="予測値と残差の分散p-60-62.html"><i class="fa fa-check"></i>3.3.2 予測値と残差の分散(p.60-62)</a></li>
+<li class="chapter" data-level="" data-path="予測の標準誤差p-62-63.html"><a href="予測の標準誤差p-62-63.html"><i class="fa fa-check"></i>3.3.3 予測の標準誤差(p.62-63)</a></li>
+<li class="chapter" data-level="" data-path="選抜による集団の等質性の変化の影響p-69-72.html"><a href="選抜による集団の等質性の変化の影響p-69-72.html"><i class="fa fa-check"></i>3.4.1 選抜による集団の等質性の変化の影響(p.69-72)</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html"><i class="fa fa-check"></i>演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題1-1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題2-1"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題3-1"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題4-1"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題5-1"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題6-1"><i class="fa fa-check"></i>問題6</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題7"><i class="fa fa-check"></i>問題7</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題8"><i class="fa fa-check"></i>問題8</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題9"><i class="fa fa-check"></i>問題9</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第4章-確率モデルと標本分布.html"><a href="第4章-確率モデルと標本分布.html"><i class="fa fa-check"></i>第4章 確率モデルと標本分布</a><ul>
+<li class="chapter" data-level="" data-path="比率の標本分布p-93-97.html"><a href="比率の標本分布p-93-97.html"><i class="fa fa-check"></i>4.1.1 比率の標本分布(p.93-97)</a><ul>
+<li class="chapter" data-level="" data-path="比率の標本分布p-93-97.html"><a href="比率の標本分布p-93-97.html#手順1"><i class="fa fa-check"></i>手順1</a></li>
+<li class="chapter" data-level="" data-path="比率の標本分布p-93-97.html"><a href="比率の標本分布p-93-97.html#手順2"><i class="fa fa-check"></i>手順2</a></li>
+<li class="chapter" data-level="" data-path="比率の標本分布p-93-97.html"><a href="比率の標本分布p-93-97.html#手順3"><i class="fa fa-check"></i>手順3</a></li>
+<li class="chapter" data-level="" data-path="比率の標本分布p-93-97.html"><a href="比率の標本分布p-93-97.html#手順4"><i class="fa fa-check"></i>手順4</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="確率分布の平均p-97-98.html"><a href="確率分布の平均p-97-98.html"><i class="fa fa-check"></i>4.1.2 確率分布の平均(p.97-98)</a></li>
+<li class="chapter" data-level="" data-path="比率の標本分布の平均p-98-99.html"><a href="比率の標本分布の平均p-98-99.html"><i class="fa fa-check"></i>4.1.3 比率の標本分布の平均(p.98-99)</a><ul>
+<li class="chapter" data-level="" data-path="比率の標本分布の平均p-98-99.html"><a href="比率の標本分布の平均p-98-99.html#手順1-1"><i class="fa fa-check"></i>手順1</a></li>
+<li class="chapter" data-level="" data-path="比率の標本分布の平均p-98-99.html"><a href="比率の標本分布の平均p-98-99.html#手順2-1"><i class="fa fa-check"></i>手順2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="確率分布の標準偏差p-99-100.html"><a href="確率分布の標準偏差p-99-100.html"><i class="fa fa-check"></i>4.1.4 確率分布の標準偏差(p.99-100)</a></li>
+<li class="chapter" data-level="" data-path="比率の標本分布の標準偏差p-100.html"><a href="比率の標本分布の標準偏差p-100.html"><i class="fa fa-check"></i>4.1.5 比率の標本分布の標準偏差(p.100)</a></li>
+<li class="chapter" data-level="" data-path="標準誤差に基づくサンプルサイズの決定p-101-102.html"><a href="標準誤差に基づくサンプルサイズの決定p-101-102.html"><i class="fa fa-check"></i>4.1.6 標準誤差に基づくサンプルサイズの決定(p.101-102)</a></li>
+<li class="chapter" data-level="" data-path="逸脱行動データにおける比率の変動p-102-103.html"><a href="逸脱行動データにおける比率の変動p-102-103.html"><i class="fa fa-check"></i>4.1.7 逸脱行動データにおける比率の変動(p.102-103)</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html"><i class="fa fa-check"></i>4.1 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題1-2"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題2-2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題3-2"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題4-2"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題5-2"><i class="fa fa-check"></i>問題5</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="正規分布の確率の求め方p-106-109.html"><a href="正規分布の確率の求め方p-106-109.html"><i class="fa fa-check"></i>4.2.1 正規分布の確率の求め方(p.106-109)</a><ul>
+<li class="chapter" data-level="" data-path="正規分布の確率の求め方p-106-109.html"><a href="正規分布の確率の求め方p-106-109.html#確率密度関数を積分する方法"><i class="fa fa-check"></i>確率密度関数を積分する方法</a></li>
+<li><a href="正規分布の確率の求め方p-106-109.html#pnorm関数を使った計算方法"><code>pnorm()</code>関数を使った計算方法</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="正規分布を仮定したときの平均の標本分布p-109-111.html"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html"><i class="fa fa-check"></i>4.2.2 正規分布を仮定したときの平均の標本分布(p.109-111)</a></li>
+<li class="chapter" data-level="" data-path="逸脱行動データにおける平均の変動p-111.html"><a href="逸脱行動データにおける平均の変動p-111.html"><i class="fa fa-check"></i>4.2.3 逸脱行動データにおける平均の変動(p.111)</a></li>
+<li class="chapter" data-level="" data-path="演習問題-3.html"><a href="演習問題-3.html"><i class="fa fa-check"></i>4.2 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-3.html"><a href="演習問題-3.html#問題1-3"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-3.html"><a href="演習問題-3.html#問題2-3"><i class="fa fa-check"></i>問題2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="相関係数の標本分布.html"><a href="相関係数の標本分布.html"><i class="fa fa-check"></i>4.3.1 相関係数の標本分布</a></li>
+<li class="chapter" data-level="" data-path="相関係数に関する確率計算p-115-117.html"><a href="相関係数に関する確率計算p-115-117.html"><i class="fa fa-check"></i>4.3.2 相関係数に関する確率計算(p.115-117)</a></li>
+<li class="chapter" data-level="" data-path="回帰分析のための確率モデルp-118-119.html"><a href="回帰分析のための確率モデルp-118-119.html"><i class="fa fa-check"></i>4.3.3 回帰分析のための確率モデル(p.118-119)</a></li>
+<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html"><i class="fa fa-check"></i>4.3 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html#問題1-4"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html#問題2-4"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html#問題3-3"><i class="fa fa-check"></i>問題3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第5章-推定と検定の考え方.html"><a href="第5章-推定と検定の考え方.html"><i class="fa fa-check"></i>第5章 推定と検定の考え方</a><ul>
+<li class="chapter" data-level="" data-path="不偏推定量p-128-129.html"><a href="不偏推定量p-128-129.html"><i class="fa fa-check"></i>5.1.1 不偏推定量(p.128-129)</a><ul>
+<li><a href="不偏推定量p-128-129.html#母集団が標準正規分布の場合">母集団が<strong>(標準)正規分布</strong>の場合</a></li>
+<li><a href="不偏推定量p-128-129.html#母集団が2項分布の場合">母集団が<strong>2項分布</strong>の場合</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="最尤法.html"><a href="最尤法.html"><i class="fa fa-check"></i>5.1.2 最尤法</a></li>
+<li class="chapter" data-level="" data-path="標準誤差による推定制度の評価.html"><a href="標準誤差による推定制度の評価.html"><i class="fa fa-check"></i>5.1.3 標準誤差による推定制度の評価</a></li>
+<li class="chapter" data-level="" data-path="標準誤差に基づくサンプルサイズの決定.html"><a href="標準誤差に基づくサンプルサイズの決定.html"><i class="fa fa-check"></i>5.1.4 標準誤差に基づくサンプルサイズの決定</a></li>
+<li class="chapter" data-level="" data-path="検定統計量の帰無分布と棄却域.html"><a href="検定統計量の帰無分布と棄却域.html"><i class="fa fa-check"></i>5.2.1 検定統計量の帰無分布と棄却域</a></li>
+<li class="chapter" data-level="" data-path="有意水準.html"><a href="有意水準.html"><i class="fa fa-check"></i>5.2.2 有意水準</a></li>
+<li class="chapter" data-level="" data-path="t分布を用いた検定.html"><a href="t分布を用いた検定.html"><i class="fa fa-check"></i>5.2.3 t分布を用いた検定</a></li>
+<li class="chapter" data-level="" data-path="検定力の求め方.html"><a href="検定力の求め方.html"><i class="fa fa-check"></i>5.3.1 検定力の求め方</a></li>
+<li class="chapter" data-level="" data-path="検定力分析によるサンプルサイズの決定.html"><a href="検定力分析によるサンプルサイズの決定.html"><i class="fa fa-check"></i>5.3.2 検定力分析によるサンプルサイズの決定</a></li>
+<li class="chapter" data-level="" data-path="任意の相関値を帰無仮説とした検定.html"><a href="任意の相関値を帰無仮説とした検定.html"><i class="fa fa-check"></i>5.4.1 任意の相関値を帰無仮説とした検定</a></li>
+<li class="chapter" data-level="" data-path="信頼区間の算出.html"><a href="信頼区間の算出.html"><i class="fa fa-check"></i>5.4.2 信頼区間の算出</a></li>
+<li class="chapter" data-level="" data-path="信頼区間を利用したサンプルサイズの決定.html"><a href="信頼区間を利用したサンプルサイズの決定.html"><i class="fa fa-check"></i>5.4.3 信頼区間を利用したサンプルサイズの決定</a></li>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html"><i class="fa fa-check"></i>演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題1-5"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題2-5"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題3-4"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題4-3"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題5-3"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題6-2"><i class="fa fa-check"></i>問題6</a></li>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題7-1"><i class="fa fa-check"></i>問題7</a></li>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題8-1"><i class="fa fa-check"></i>問題8</a></li>
+<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題9-1"><i class="fa fa-check"></i>問題9</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">心理統計学の基礎</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="共分散と相関係数p.43-45" class="section level2 unnumbered">
+<h2>3.1.1 共分散と相関係数(p.43-45)</h2>
+<ul>
+<li>教科書図3-1をRで描いてみましょう。<br />
+</li>
+<li>図1-3の逸脱行動得点データを<code>dat</code>というオブジェクトに読み込みます(「psych_stat」にある「psych_stat.Rproj」ファイルからRStudioを起動してください)。</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;data/itsudatsu_data.csv&quot;</span>)</a></code></pre></div>
+<ul>
+<li><code>dat</code>の先頭行を確認します。</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">head</span>(dat)</a></code></pre></div>
+<pre><code>##   id sex Grade_6th Grade_8th diff
+## 1  1   1         4         8    4
+## 2  2   1         9        12    3
+## 3  3   1        14        11   -3
+## 4  4   1        16        20    4
+## 5  5   1        15        16    1
+## 6  6   1        14        18    4</code></pre>
+<ul>
+<li>図3-1では男子のデータをプロットしているので，<code>dat</code>から男子の行のみを抽出します。<br />
+</li>
+<li><code>dat</code>の<code>sex</code>列が性別を表し，1が男子，2が女子を意味します。<br />
+</li>
+<li>男子のデータをプロットするので，<code>subset()</code>関数を使って，<code>dat</code>から<code>sex</code>列が1の行のみ抽出します。</li>
+</ul>
+<div class="alert alert-info">
+<ul>
+<li>データフレームから特定の行を抽出するには，<code>subset()</code>関数を使用します。<br />
+</li>
+<li><code>subset()</code>関数は，<code>subset(データフレーム, 条件式)</code>という使い方をします。<br />
+</li>
+<li>条件式には比較演算子や論理理演算子を使って指定することがあります。
+<ul>
+<li><code>sex</code>列の値が1と指定するときには，<code>sex == 1</code>と指定します。<br />
+</li>
+<li><code>==</code>は<code>等しい</code>を表します。<br />
+</li>
+<li>他にも，比較演算子や論理理演算子を用いることで特定の値よりも大きいか小さいか，ある文字列に一致するかしないかなどを確認できます。<br />
+</li>
+</ul></li>
+</ul>
+</div>
+<ul>
+<li>男子の行を<code>dat_M</code>というオブジェクトに代入しましょう。</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">dat_M &lt;-<span class="st"> </span><span class="kw">subset</span>(dat, sex <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<ul>
+<li><code>dat_M</code>を確認すると，<code>sex</code>列が1の行のみが抽出されていることが確認できます。</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">dat_M</a></code></pre></div>
+<pre><code>##    id sex Grade_6th Grade_8th diff
+## 1   1   1         4         8    4
+## 2   2   1         9        12    3
+## 3   3   1        14        11   -3
+## 4   4   1        16        20    4
+## 5   5   1        15        16    1
+## 6   6   1        14        18    4
+## 7   7   1         7         7    0
+## 8   8   1        13        19    6
+## 9   9   1        18        20    2
+## 10 10   1        20        14   -6
+## 11 11   1        12        14    2
+## 12 12   1         6        12    6
+## 13 13   1        10        16    6
+## 14 14   1        16        14   -2
+## 15 15   1        12        13    1
+## 16 16   1        16        17    1
+## 17 17   1        13        19    6
+## 18 18   1        12        10   -2
+## 19 19   1        12        19    7
+## 20 20   1        15        14   -1</code></pre>
+<ul>
+<li>図3-1をプロットしていきましょう。<br />
+</li>
+<li>図3-1は，x軸に小6の時の逸脱行動得点，y軸に中2の時の逸脱行動得点をプロットしています。</li>
+</ul>
+<div class="alert alert-info">
+<ul>
+<li>散布図を描くには，<code>plot()</code>関数を使います。<br />
+</li>
+<li><code>plot(x軸の値, y軸の値)</code>で2変数の散布図を描くことができます。
+<ul>
+<li><code>dat_M</code>から小6の時の逸脱行動得点のみを取り出す場合には，<code>$</code>記号を使います。詳しくは以前配布したスライドを確認してください。<code>$</code>記号で，列名による列抽出ができます。<br />
+</li>
+</ul></li>
+</ul>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">plot</span>(dat_M<span class="op">$</span>Grade_6th, dat_M<span class="op">$</span>Grade_8th)</a></code></pre></div>
+<p><img src="psych_stat_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ul>
+<li>図3-1と見た目を揃えます。</li>
+</ul>
+<div class="alert alert-info">
+<ul>
+<li>実行する際には，<code>plot()</code>関数を必ず先に実行するようにしてください。<code>abline()</code>関数は<code>plot()</code>でできた図の上に線を上書きする関数です。<br />
+</li>
+<li>Macだとプロットするときに日本語が文字化けすることがあります。その時は，<code>par(family= "HiraKakuProN-W3")</code>というコードを入力し実行してから，再度<code>plot()</code>関数を実行してください。<br />
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">plot</span>(dat_M<span class="op">$</span>Grade_6th, dat_M<span class="op">$</span>Grade_8th, </a>
+<a class="sourceLine" id="cb8-2" title="2">     <span class="dt">pch =</span> <span class="dv">16</span>,</a>
+<a class="sourceLine" id="cb8-3" title="3">     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>), </a>
+<a class="sourceLine" id="cb8-4" title="4">     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">22</span>), </a>
+<a class="sourceLine" id="cb8-5" title="5">     <span class="dt">las =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb8-6" title="6">     <span class="dt">bty =</span> <span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb8-7" title="7">     <span class="dt">tcl =</span> <span class="fl">0.2</span>,</a>
+<a class="sourceLine" id="cb8-8" title="8">     <span class="dt">xaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</a>
+<a class="sourceLine" id="cb8-9" title="9">     <span class="dt">yaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</a>
+<a class="sourceLine" id="cb8-10" title="10">     <span class="dt">xlab =</span> <span class="st">&quot;小6の時の逸脱行動得点x&quot;</span>,</a>
+<a class="sourceLine" id="cb8-11" title="11">     <span class="dt">ylab =</span> <span class="st">&quot;中2の時の逸脱行動得点y&quot;</span>)</a>
+<a class="sourceLine" id="cb8-12" title="12"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_6th), <span class="dt">v =</span> <span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_8th))</a></code></pre></div>
+<p><img src="psych_stat_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br>
+<br></p>
+<ul>
+<li>(3.1)式に基づいて共分散を計算してみましょう。<br />
+</li>
+<li>共分散は以下の式で定義されました。</li>
+</ul>
+<p><span class="math display">\[
+s _{xy} = \frac{1}{N} \sum ^{N} _{i = 1} (x _{i} - \bar{x})(y _{i} - \bar{y})\tag{3.1}\\
+\]</span></p>
+<ul>
+<li>逸脱行動データにおいては，<span class="math inline">\(x\)</span>が小6の時の逸脱行動得点，<span class="math inline">\(y\)</span>が中2の時の逸脱行動得点を表します。</li>
+<li>まずは<span class="math inline">\(\bar{x}\)</span>を求めましょう。</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_6th)</a></code></pre></div>
+<pre><code>## [1] 12.7</code></pre>
+<ul>
+<li>同様に<span class="math inline">\(\bar{y}\)</span>も求めます。</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_8th)</a></code></pre></div>
+<pre><code>## [1] 14.65</code></pre>
+<ul>
+<li>Rではベクトルで一度に計算を行うことができます。それぞれのデータから，<span class="math inline">\(\bar{x}\)</span>，<span class="math inline">\(\bar{y}\)</span>を引きます。<br />
+</li>
+<li>引き算した結果をそれぞれ<code>hensa_x</code>，<code>hensa_y</code>というオブジェクトに代入します。</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">hensa_x &lt;-<span class="st"> </span>dat_M<span class="op">$</span>Grade_6th <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_6th)</a>
+<a class="sourceLine" id="cb13-2" title="2">hensa_y &lt;-<span class="st"> </span>dat_M<span class="op">$</span>Grade_8th <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_8th)</a>
+<a class="sourceLine" id="cb13-3" title="3">hensa_x</a></code></pre></div>
+<pre><code>##  [1] -8.7 -3.7  1.3  3.3  2.3  1.3 -5.7  0.3  5.3  7.3 -0.7 -6.7 -2.7  3.3 -0.7
+## [16]  3.3  0.3 -0.7 -0.7  2.3</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">hensa_y</a></code></pre></div>
+<pre><code>##  [1] -6.65 -2.65 -3.65  5.35  1.35  3.35 -7.65  4.35  5.35 -0.65 -0.65 -2.65
+## [13]  1.35 -0.65 -1.65  2.35  4.35 -4.65  4.35 -0.65</code></pre>
+<ul>
+<li>(3.1)式に基づいて，<code>hensa_x</code>と<code>hensa_y</code>をかけます。</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">hensa_x <span class="op">*</span><span class="st"> </span>hensa_y</a></code></pre></div>
+<pre><code>##  [1] 57.855  9.805 -4.745 17.655  3.105  4.355 43.605  1.305 28.355 -4.745
+## [11]  0.455 17.755 -3.645 -2.145  1.155  7.755  1.305  3.255 -3.045 -1.495</code></pre>
+<ul>
+<li>最後に平均を取ることで，共分散を計算することができます。</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">mean</span>(hensa_x <span class="op">*</span><span class="st"> </span>hensa_y)</a></code></pre></div>
+<pre><code>## [1] 8.895</code></pre>
+<ul>
+<li>教科書では小数点を丸めていますが，同じ値が得られました。</li>
+</ul>
+<p><br>
+<br></p>
+<ul>
+<li>(3.2)式で定義される不偏共分散も同様に計算してみましょう。<br />
+</li>
+<li><span class="math inline">\(N\)</span>はデータの個数を表し，今回のデータでは<span class="math inline">\(N = 20\)</span>です。</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">sum</span>(hensa_x <span class="op">*</span><span class="st"> </span>hensa_y) <span class="op">/</span><span class="st"> </span>(<span class="dv">20</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [1] 9.363158</code></pre>
+<ul>
+<li>Rには共分散を求めることのできる<code>cov</code>関数があります。</li>
+</ul>
+<div class="alert alert-info">
+<ul>
+<li><code>cov()</code>関数は，<code>cov(x, y)</code>という使い方をします。<br />
+</li>
+<li><code>x</code>，<code>y</code>にはそれぞれ変数を入れます。<br />
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">cov</span>(dat_M<span class="op">$</span>Grade_6th, dat_M<span class="op">$</span>Grade_8th)</a></code></pre></div>
+<pre><code>## [1] 9.363158</code></pre>
+<ul>
+<li>(3.2)式で計算した値と一致したことから，Rの<code>cov()</code>関数は<strong>不偏共分散</strong>を計算する関数であることが確認できました。</li>
+</ul>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="第3章-相関関係の把握と回帰分析.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="共分散から相関係数へp-47-48.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
