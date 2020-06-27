@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.1.4 確率分布の標準偏差(p.99-100) | 心理統計学の基礎</title>
-  <meta name="description" content="4.1.4 確率分布の標準偏差(p.99-100) | 心理統計学の基礎" />
+  <title>6.3.2 平均値差の区間推定(p.177 - 178) | 心理統計学の基礎</title>
+  <meta name="description" content="6.3.2 平均値差の区間推定(p.177 - 178) | 心理統計学の基礎" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.1.4 確率分布の標準偏差(p.99-100) | 心理統計学の基礎" />
+  <meta property="og:title" content="6.3.2 平均値差の区間推定(p.177 - 178) | 心理統計学の基礎" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.1.4 確率分布の標準偏差(p.99-100) | 心理統計学の基礎" />
+  <meta name="twitter:title" content="6.3.2 平均値差の区間推定(p.177 - 178) | 心理統計学の基礎" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="比率の標本分布の平均p-98-99.html"/>
-<link rel="next" href="比率の標本分布の標準偏差p-100.html"/>
+<link rel="prev" href="帰無仮説の検定p-176-177.html"/>
+<link rel="next" href="問題の例p-178-179.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,9 +51,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -62,14 +62,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -78,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -243,6 +245,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題9-1"><i class="fa fa-check"></i>問題9</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="第6章-平均値差と連関に関する推測.html"><a href="第6章-平均値差と連関に関する推測.html"><i class="fa fa-check"></i>第6章 平均値差と連関に関する推測</a><ul>
+<li><a href="t分布を用いた正確な検定p-161-163.html#t分布を用いた正確な検定p.161-163">6.1.1 <span class="math inline">\(t\)</span>分布を用いた正確な検定(p.161-163)</a></li>
+<li class="chapter" data-level="" data-path="効果量を用いた検定p-164.html"><a href="効果量を用いた検定p-164.html"><i class="fa fa-check"></i>6.1.2 効果量を用いた検定(p.164)</a></li>
+<li class="chapter" data-level="" data-path="検定力とサンプルサイズp-164-166.html"><a href="検定力とサンプルサイズp-164-166.html"><i class="fa fa-check"></i>6.1.3 検定力とサンプルサイズ(p.164 - 166)</a></li>
+<li class="chapter" data-level="" data-path="平均値差の区間推定p-167-168.html"><a href="平均値差の区間推定p-167-168.html"><i class="fa fa-check"></i>6.2.1 平均値差の区間推定(p.167 - 168)</a></li>
+<li class="chapter" data-level="" data-path="効果量の区間推定p-168-170.html"><a href="効果量の区間推定p-168-170.html"><i class="fa fa-check"></i>6.2.2 効果量の区間推定(p.168 - 170)</a></li>
+<li class="chapter" data-level="" data-path="帰無仮説の検定p-176-177.html"><a href="帰無仮説の検定p-176-177.html"><i class="fa fa-check"></i>6.3.1 帰無仮説の検定(p.176 - 177)</a></li>
+<li class="chapter" data-level="" data-path="平均値差の区間推定p-177-178.html"><a href="平均値差の区間推定p-177-178.html"><i class="fa fa-check"></i>6.3.2 平均値差の区間推定(p.177 - 178)</a></li>
+<li class="chapter" data-level="" data-path="問題の例p-178-179.html"><a href="問題の例p-178-179.html"><i class="fa fa-check"></i>6.4.1 問題の例(p.178 - 179)</a></li>
+<li class="chapter" data-level="" data-path="独立な2群の比率差の検定p-180-181.html"><a href="独立な2群の比率差の検定p-180-181.html"><i class="fa fa-check"></i>6.4.2 独立な2群の比率差の検定(p.180 - 181)</a></li>
+<li class="chapter" data-level="" data-path="対応のある2群の比率差の検定p-181-183.html"><a href="対応のある2群の比率差の検定p-181-183.html"><i class="fa fa-check"></i>6.4.3 対応のある2群の比率差の検定(p.181 - 183)</a></li>
+<li class="chapter" data-level="" data-path="カイ2乗統計量p-184-187.html"><a href="カイ2乗統計量p-184-187.html"><i class="fa fa-check"></i>6.5.1 カイ2乗統計量(p.184 - 187)</a></li>
+<li class="chapter" data-level="" data-path="クラメルの連関係数とファイ係数p-187-188.html"><a href="クラメルの連関係数とファイ係数p-187-188.html"><i class="fa fa-check"></i>6.5.2 クラメルの連関係数とファイ係数(p.187 - 188)</a></li>
+<li class="chapter" data-level="" data-path="連関の検定p-188-189.html"><a href="連関の検定p-188-189.html"><i class="fa fa-check"></i>6.5.3 連関の検定(p.188 - 189)</a></li>
+<li class="chapter" data-level="" data-path="連関の検定と比率差の検定の関係p-189-190.html"><a href="連関の検定と比率差の検定の関係p-189-190.html"><i class="fa fa-check"></i>6.5.4 連関の検定と比率差の検定の関係(P.189 - 190)</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html"><i class="fa fa-check"></i>演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題1-6"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題2-6"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題3-5"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題4-4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題5-4"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題6-3"><i class="fa fa-check"></i>問題6</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題7-2"><i class="fa fa-check"></i>問題7</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題8-2"><i class="fa fa-check"></i>問題8</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題9-2"><i class="fa fa-check"></i>問題9</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題10"><i class="fa fa-check"></i>問題10</a></li>
+<li class="chapter" data-level="" data-path="演習問題-6.html"><a href="演習問題-6.html#問題11"><i class="fa fa-check"></i>問題11</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -263,31 +294,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="確率分布の標準偏差p.99-100" class="section level2 unnumbered">
-<h2>4.1.4 確率分布の標準偏差(p.99-100)</h2>
+<div id="平均値差の区間推定p.177---178" class="section level2 unnumbered">
+<h2>6.3.2 平均値差の区間推定(p.177 - 178)</h2>
 <ul>
-<li>試行数<span class="math inline">\(N = 5\)</span>，母集団比率<span class="math inline">\(\pi = .6\)</span>の例で，(4.7)式を計算してみましょう。<br />
-</li>
-<li>(4.7)式は以下のように定義されます。</li>
+<li>(6.30)式，(6.31)式に従って95%信頼区間を計算しましょう。</li>
 </ul>
-<p><span class="math display">\[
-\sigma = \sqrt{\sum ^{m} _{k = 1}(x _ {k} - \mu) ^{2} f(x _{k})} \tag{4.7}\\
-\]</span></p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="平均値差の区間推定p-177-178.html#cb64-1"></a><span class="kw">mean</span>(dat_M<span class="op">$</span>diff) <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, <span class="dt">df =</span> <span class="dv">19</span>) <span class="op">*</span><span class="st"> </span>(<span class="kw">sd</span>(dat_M<span class="op">$</span>diff) <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">20</span>))</span></code></pre></div>
+<pre><code>## [1] 0.2902758</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="平均値差の区間推定p-177-178.html#cb66-1"></a><span class="kw">mean</span>(dat_M<span class="op">$</span>diff) <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, <span class="dt">df =</span> <span class="dv">19</span>) <span class="op">*</span><span class="st"> </span>(<span class="kw">sd</span>(dat_M<span class="op">$</span>diff) <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">20</span>))</span></code></pre></div>
+<pre><code>## [1] 3.609724</code></pre>
 <ul>
-<li>(4.7)式をコードで記述すると以下のようになります。</li>
-</ul>
-<div class="alert alert-info">
-<p>これまでの計算で，<span class="math inline">\(\mu\)</span>(<span class="math inline">\(\mu_{w}\)</span>)はRコードで<code>N * PI</code>と記述できます。<code>sqrt()</code>関数は平方根を計算する関数です。square rootの略と覚えましょう。</p>
-</div>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">sqrt</span>(<span class="kw">sum</span>((w <span class="op">-</span><span class="st"> </span>N <span class="op">*</span><span class="st"> </span>PI)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x))</a></code></pre></div>
-<pre><code>## [1] 1.095445</code></pre>
-<ul>
-<li>また，(4.7)式を変形させた(4.8)式をコードで記述すると以下になります。</li>
-</ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">sqrt</span>(N <span class="op">*</span><span class="st"> </span>PI <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>PI))</a></code></pre></div>
-<pre><code>## [1] 1.095445</code></pre>
-<ul>
-<li>同様の結果が得られていることが確認できます。</li>
+<li>教科書と同様の値が計算できました。また，先ほど計算した<code>t.test()</code>関数の<code>95 percent confidence interval:</code>とも全く同じ値が表示されていることを確認してください。</li>
 </ul>
 </div>
             </section>
@@ -295,8 +312,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="比率の標本分布の平均p-98-99.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="比率の標本分布の標準偏差p-100.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="帰無仮説の検定p-176-177.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="問題の例p-178-179.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
