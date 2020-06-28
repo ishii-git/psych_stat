@@ -94,7 +94,7 @@ gamma(N + 1) / (gamma(w + 1) * gamma(N - w + 1)) * PI ^w * (1 - PI) ^(N - w)
 - Macだとプロットするときに日本語が文字化けすることがあります。その時は，`par(family= "HiraKakuProN-W3")`というコードを入力し実行してから，再度`barplot()`関数を実行してください。  
 </div>  
 
-```{r fig.align="center"}
+```{r fig10, fig.align="center"}
 x <- gamma(N + 1) / (gamma(w + 1) * gamma(N - w + 1)) * PI ^w * (1 - PI) ^(N - w)
 
 barplot(x, ylab = "確率", main = "正答者wおよび比率pの標本分布",
@@ -293,7 +293,7 @@ Standard.error(5, 0.6)
 - Macだとプロットするときに日本語が文字化けすることがあります。その時は，`par(family= "HiraKakuProN-W3")`というコードを入力し実行してから，再度コードをを実行してください。  
 </div>  
 
-```{r fig.align="center"}
+```{r fig11, fig.align="center"}
 PI <- seq(0,1,by = 0.01)
 plot(Standard.error(1, PI) ~ PI, type = "l", xlab = "母集団比率", ylab = "標準誤差", main = "標本比率pの標準誤差")
 lines(Standard.error(3, PI) ~ PI)
@@ -483,7 +483,7 @@ integrate(stand.norm, lower = 0, upper = 1.96)
   - 累積分布関数は，$-\infty$からある値までの確率を計算します。  
 - $Prob(0 < z < 1.96)$の計算方法は，$-\infty$から$z = 1.96$までの確率から，$-\infty$から$z = 0$の範囲までの確率を引き算します。  
 
-```{r echo = FALSE, fig.align="center", fig.height=3, fig.width=4}
+```{r fig12, echo = FALSE, fig.align="center", fig.height=3, fig.width=4}
 knitr::include_graphics(path = "fig/zscore.png")
 ```  
 
@@ -543,7 +543,7 @@ sd(std.norm.1)
 
 - 得られた1000個の標本平均をヒストグラムで示します。  
 
-```{r fig.align="center"}
+```{r fig13, fig.align="center"}
 hist(std.norm.1, freq = FALSE, xlim = c(-4,4))
 ```  
 
@@ -585,7 +585,7 @@ sd(std.norm.3_mean)
 
 - 得られた1000個の標本平均をヒストグラムで示します。  
 
-```{r fig.align="center"}
+```{r fig14, fig.align="center"}
 hist(std.norm.3_mean, freq = FALSE, xlim = c(-4,4))
 ```  
 
@@ -622,7 +622,7 @@ sqrt(mean((std.norm.10_mean - mean(std.norm.10_mean))^2))
   
 - 得られた1000個の標本平均をヒストグラムで示します。  
 
-```{r fig.align="center"}
+```{r fig15, fig.align="center"}
 hist(std.norm.10_mean, freq = FALSE, xlim = c(-4,4))
 ```  
 <br>
@@ -719,7 +719,7 @@ sd(diff_F) / sqrt(20)
 
 - (4.20)式を図で表します。サンプルサイズは20,50,100,200,300の5つで計算をしています。  
 
-```{r fig.align="center"}
+```{r fig16, fig.align="center"}
 ro <- seq(-1, 1,by = .01)
 plot((1 - ro^2) / sqrt(20) ~ ro, type = "l", xlab = "母集団相関係数", ylab = "標準誤差", col = 1)
 lines((1-ro^2) / sqrt(50) ~ ro, col = 2)	
@@ -780,7 +780,7 @@ fisher.z <- function(r){
   }
 ```  
 
-```{r fig.align="center"}
+```{r fig17, fig.align="center"}
 x <- seq(-1, 1, length = 50)
 plot(fisher.z(x) ~ x, type = "l", xlab = "相関係数", ylab = "Z", main = "フィッシャーのZ変換")
 ```  

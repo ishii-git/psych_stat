@@ -56,7 +56,7 @@ $$
 - `dt()`関数は第1引数に確率密度を求めたい値，第2引数`df`に自由度を指定します。`?dt`とコンソールに入力してヘルプを確認してください。
 </div> 
 
-```{r fig.align="center"}
+```{r fig25, fig.align="center"}
 x <- seq(-5, 5, 0.01)
 plot(x, dt(x, df = 38), 
      type = "l",
@@ -215,7 +215,7 @@ pt(qt_U, df = 38, ncp = 1 * sqrt(20/2), lower.tail = FALSE)
 - 図中の垂線は$t$分布において上側.025に相当するt値を示しています。  
 
 
-```{r fig.align = "center"}
+```{r fig26, fig.align = "center"}
 x <- seq(-6, 8, 0.01)
 plot(x, dt(x, df = 38, ncp = 0), 
      type = "l",
@@ -491,7 +491,7 @@ phi
 - カイ2乗分布の形を確認しましょう。カイ2乗分布も自由度によって規定される分布です。  
 - 自由度を1, 3, 5と変化させたときの分布の形状を作図します。  
 
-```{r fig.align="center"}
+```{r fig27, fig.align="center"}
 x <- seq(0, 10, 0.01)
 plot(x, dchisq(x, df = 1), 
      type = "l",
@@ -571,7 +571,7 @@ z ^2
 
 - 同じ3.75という値が計算できました。  
 
-## 演習問題 {-}  
+## 6.6 6章演習問題 {-}  
 
 - 以下のコードを実行してください。  
 

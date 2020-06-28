@@ -41,7 +41,7 @@ for(i in 1:1000){
 
 - 1000回繰り返したうちの1回目の乱数をヒストグラムで確認します。  
 
-```{r fig.align = "center"}
+```{r fig18, fig.align = "center"}
 hist(sim_norm_value[1,])
 ```  
 
@@ -100,7 +100,7 @@ for(i in 1:1000){
 
 - 1000回繰り返したうちの1回目の乱数を棒グラフで確認します(軸に日本語を使っているので，Macの人は文字化けする可能性があります。3章3.1.1や4章4.1.1で対処法を載せているので確認してください)。  
 
-```{r fig.align = "center"}
+```{r fig19, fig.align = "center"}
 barplot(table(sim_binom_value[1,]), ylim = c(0, 50), xlab = "成功数w", ylab = "度数")
 ```  
 
@@ -199,7 +199,7 @@ yuudo(c(0.2, 0.4, 0.6, 0.8))
 - 図5-1を書いてみましょう。
 - 最初のコードは第4章4.1.1で図を書いたときと同じように，0から1まで0.01刻みのベクトルを作成しています。  
 
-```{r fig.align="center"}
+```{r fig20, fig.align="center"}
 x <- seq(0, 1, 0.01)
 plot(x, yuudo(x), 
      type = "l",
@@ -270,7 +270,7 @@ library(SuppDists)
 
 - 図5-2を書いていきましょう。  
 
-```{r fig.align="center"}
+```{r fig21, fig.align="center"}
 x <- seq(-1, 1, 0.01)
 plot(x, dPearson(x, N = 20, rho = 0.0), 
      type = "l",
@@ -377,7 +377,7 @@ $$
 
 - 自由度$df = 18$の$t$分布をプロットします。  
 
-```{r fig.align="center"}
+```{r fig22, fig.align="center"}
 x <- seq(-4, 4, 0.01)
 plot(x, dt(x, df = 18), 
      type = "l",
@@ -561,7 +561,7 @@ power_cor(N = 100, rho = 0.4)
 
 - 付図1を書いてみましょう。ただし，$N = 100$と$N = 200$の時とします。    
 
-```{r fig.align="center"}
+```{r fig23, fig.align="center"}
 x <- seq(-1, 1, 0.01)
 plot(x, power_cor(N = 100, rho = x), 
      type = "l",
@@ -589,7 +589,7 @@ legend("bottomright", legend = c("N = 100","N = 200"), col = c("blue","black"), 
 
 - `qPearson()`関数を使って図5-5を描きます。  
 
-```{r fig.align="center"}
+```{r fig24, fig.align="center"}
 x <- seq(-1, 1, 0.01)[-c(1,201)]
 plot(x, qPearson(0.975, N = 20, rho = x), 
      type = "l",
@@ -681,7 +681,7 @@ cor_sample(r = .5, w = 0.05)
 - 付表5とおなじ値が計算されました。  
 
 
-## 演習問題 {-}
+## 5.5 5章演習問題 {-}
 
 ### 問題1 {-}  
 

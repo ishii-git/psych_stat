@@ -60,7 +60,7 @@ plot(dat_M$Grade_6th, dat_M$Grade_8th)
 - Macだとプロットするときに日本語が文字化けすることがあります。その時は，`par(family= "HiraKakuProN-W3")`というコードを入力し実行してから，再度`plot()`関数を実行してください。  
 </div>  
 
-```{r fig.align="center"}
+```{r fig1, fig.align="center"}
 plot(dat_M$Grade_6th, dat_M$Grade_8th, 
      pch = 16,
      xlim = c(0, 22), 
@@ -263,7 +263,7 @@ a_F
   - 今回は傾きと切片がある線を引くので，引数の`a`と`b`を使います。`a`と`b`にそれぞれ切片と傾きの値を与えることで線を引くことができます(`?abline`とコンソールに入力することでヘルプを確認できます)。  
 </div> 
 
-```{r fig.align="center"}
+```{r fig2, fig.align="center"}
 plot(dat_M$Grade_6th, dat_M$Grade_8th, 
      pch = 16,
      xlim = c(0, 22), 
@@ -281,7 +281,7 @@ abline(a = a_M, b = b_M)
 
 - 同様に女子のデータをプロットします。  
 
-```{r fig.align="center"}
+```{r fig3, fig.align="center"}
 plot(dat_F$Grade_6th, dat_F$Grade_8th, 
      pch = 2,
      xlim = c(0, 22), 
@@ -302,7 +302,7 @@ abline(a = a_F, b = b_F)
 - 男子と女子のデータを1つの図にプロットします。  
 - 男子のマーカーと回帰直線は赤色に変更しています。  
 
-```{r fig.align = "center"}
+```{r fig4, fig.align = "center"}
 plot(0, 0, 
      type = "n",
      xlim = c(0, 22), 
@@ -397,7 +397,7 @@ e_M
 
 - `plot()`関数を使って，独立変数$x$と残差$e$をプロットします。  
 
-```{r fig.align="center"}
+```{r fig5, fig.align="center"}
 plot(dat_M$Grade_6th, e_M, 
      pch = 16,
      xlim = c(0, 22), 
@@ -560,7 +560,7 @@ head(sim_cor)
 - `sim_cor`をプロットします。  
 
 
-```{r fig.align="center"}
+```{r fig6, fig.align="center"}
 plot(sim_cor$father, sim_cor$son, 
      pch = 16,
      xlim = c(55, 145), 
@@ -589,7 +589,7 @@ summary(fit_yhat)
 
 - `lm()`関数の結果を先ほどの図に上書きします。息子の知能指数の平均(約100)を点線で書き入れています。    
 
-```{r fig.align="center"}
+```{r fig7, fig.align="center"}
 plot(sim_cor$father, sim_cor$son, 
      pch = 16,
      xlim = c(55, 145), 
@@ -626,7 +626,7 @@ head(sim_cor_100over)
 - 選抜した値をプロットします。  
 
 
-```{r fig.align="center"}
+```{r fig8, fig.align="center"}
 plot(sim_cor_100over$father, sim_cor_100over$son, 
      pch = 16,
      xlim = c(55, 145), 
@@ -658,7 +658,7 @@ summary(fit_yhat)
 
 - 2つの推定結果をプロットします。  
 
-```{r fig.align="center"}
+```{r fig9, fig.align="center"}
 plot(sim_cor_100over$father, sim_cor_100over$son, 
      pch = 16,
      xlim = c(55, 145), 
@@ -746,7 +746,7 @@ cor(sim_cor_100over$father, sim_cor_100over$son) * (sqrt(mean((sim_cor_100over$f
 ```  
 
 
-## 演習問題 {-}  
+## 3.5 3章演習問題 {-}  
 
 ### 問題1  {-}  
 

@@ -357,7 +357,7 @@ length(dat_diff_1sd)
 (length(dat_diff_1sd) / length(dat$diff)) * 100
 ```  
 
-## 2.3 演習問題 {-}  
+## 2.3 2章演習問題 {-}  
 
 ### 問題1 {-} 
 
