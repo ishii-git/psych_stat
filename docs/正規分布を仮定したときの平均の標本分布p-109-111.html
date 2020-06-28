@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.2.2 正規分布を仮定したときの平均の標本分布(p.109-111) | 心理統計学の基礎</title>
   <meta name="description" content="4.2.2 正規分布を仮定したときの平均の標本分布(p.109-111) | 心理統計学の基礎" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.2.2 正規分布を仮定したときの平均の標本分布(p.109-111) | 心理統計学の基礎" />
   <meta property="og:type" content="book" />
@@ -48,12 +48,13 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -62,14 +63,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -78,9 +81,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -161,16 +164,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="予測値と残差の分散p-60-62.html"><a href="予測値と残差の分散p-60-62.html"><i class="fa fa-check"></i>3.3.2 予測値と残差の分散(p.60-62)</a></li>
 <li class="chapter" data-level="" data-path="予測の標準誤差p-62-63.html"><a href="予測の標準誤差p-62-63.html"><i class="fa fa-check"></i>3.3.3 予測の標準誤差(p.62-63)</a></li>
 <li class="chapter" data-level="" data-path="選抜による集団の等質性の変化の影響p-69-72.html"><a href="選抜による集団の等質性の変化の影響p-69-72.html"><i class="fa fa-check"></i>3.4.1 選抜による集団の等質性の変化の影響(p.69-72)</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html"><i class="fa fa-check"></i>演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題1-1"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題2-1"><i class="fa fa-check"></i>問題2</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題3-1"><i class="fa fa-check"></i>問題3</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題4-1"><i class="fa fa-check"></i>問題4</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題5-1"><i class="fa fa-check"></i>問題5</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題6-1"><i class="fa fa-check"></i>問題6</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題7"><i class="fa fa-check"></i>問題7</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題8"><i class="fa fa-check"></i>問題8</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題9"><i class="fa fa-check"></i>問題9</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#演習問題"><i class="fa fa-check"></i>演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題5"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題6"><i class="fa fa-check"></i>問題6</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題7"><i class="fa fa-check"></i>問題7</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題8"><i class="fa fa-check"></i>問題8</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題9"><i class="fa fa-check"></i>問題9</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="第4章-確率モデルと標本分布.html"><a href="第4章-確率モデルと標本分布.html"><i class="fa fa-check"></i>第4章 確率モデルと標本分布</a><ul>
@@ -189,12 +192,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="比率の標本分布の標準偏差p-100.html"><a href="比率の標本分布の標準偏差p-100.html"><i class="fa fa-check"></i>4.1.5 比率の標本分布の標準偏差(p.100)</a></li>
 <li class="chapter" data-level="" data-path="標準誤差に基づくサンプルサイズの決定p-101-102.html"><a href="標準誤差に基づくサンプルサイズの決定p-101-102.html"><i class="fa fa-check"></i>4.1.6 標準誤差に基づくサンプルサイズの決定(p.101-102)</a></li>
 <li class="chapter" data-level="" data-path="逸脱行動データにおける比率の変動p-102-103.html"><a href="逸脱行動データにおける比率の変動p-102-103.html"><i class="fa fa-check"></i>4.1.7 逸脱行動データにおける比率の変動(p.102-103)</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html"><i class="fa fa-check"></i>4.1 演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題1-2"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題2-2"><i class="fa fa-check"></i>問題2</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題3-2"><i class="fa fa-check"></i>問題3</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題4-2"><i class="fa fa-check"></i>問題4</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題5-2"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#演習問題"><i class="fa fa-check"></i>4.1 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題5"><i class="fa fa-check"></i>問題5</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="正規分布の確率の求め方p-106-109.html"><a href="正規分布の確率の求め方p-106-109.html"><i class="fa fa-check"></i>4.2.1 正規分布の確率の求め方(p.106-109)</a><ul>
 <li class="chapter" data-level="" data-path="正規分布の確率の求め方p-106-109.html"><a href="正規分布の確率の求め方p-106-109.html#確率密度関数を積分する方法"><i class="fa fa-check"></i>確率密度関数を積分する方法</a></li>
@@ -202,17 +205,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="正規分布を仮定したときの平均の標本分布p-109-111.html"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html"><i class="fa fa-check"></i>4.2.2 正規分布を仮定したときの平均の標本分布(p.109-111)</a></li>
 <li class="chapter" data-level="" data-path="逸脱行動データにおける平均の変動p-111.html"><a href="逸脱行動データにおける平均の変動p-111.html"><i class="fa fa-check"></i>4.2.3 逸脱行動データにおける平均の変動(p.111)</a></li>
-<li class="chapter" data-level="" data-path="演習問題-3.html"><a href="演習問題-3.html"><i class="fa fa-check"></i>4.2 演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-3.html"><a href="演習問題-3.html#問題1-3"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-3.html"><a href="演習問題-3.html#問題2-3"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html"><i class="fa fa-check"></i>4.2 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題1-1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題2-1"><i class="fa fa-check"></i>問題2</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="相関係数の標本分布.html"><a href="相関係数の標本分布.html"><i class="fa fa-check"></i>4.3.1 相関係数の標本分布</a></li>
 <li class="chapter" data-level="" data-path="相関係数に関する確率計算p-115-117.html"><a href="相関係数に関する確率計算p-115-117.html"><i class="fa fa-check"></i>4.3.2 相関係数に関する確率計算(p.115-117)</a></li>
 <li class="chapter" data-level="" data-path="回帰分析のための確率モデルp-118-119.html"><a href="回帰分析のための確率モデルp-118-119.html"><i class="fa fa-check"></i>4.3.3 回帰分析のための確率モデル(p.118-119)</a></li>
-<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html"><i class="fa fa-check"></i>4.3 演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html#問題1-4"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html#問題2-4"><i class="fa fa-check"></i>問題2</a></li>
-<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html#問題3-3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html"><i class="fa fa-check"></i>4.3 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題1-2"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題2-2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題3-1"><i class="fa fa-check"></i>問題3</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="第5章-推定と検定の考え方.html"><a href="第5章-推定と検定の考え方.html"><i class="fa fa-check"></i>第5章 推定と検定の考え方</a><ul>
@@ -231,16 +234,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="任意の相関値を帰無仮説とした検定.html"><a href="任意の相関値を帰無仮説とした検定.html"><i class="fa fa-check"></i>5.4.1 任意の相関値を帰無仮説とした検定</a></li>
 <li class="chapter" data-level="" data-path="信頼区間の算出.html"><a href="信頼区間の算出.html"><i class="fa fa-check"></i>5.4.2 信頼区間の算出</a></li>
 <li class="chapter" data-level="" data-path="信頼区間を利用したサンプルサイズの決定.html"><a href="信頼区間を利用したサンプルサイズの決定.html"><i class="fa fa-check"></i>5.4.3 信頼区間を利用したサンプルサイズの決定</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html"><i class="fa fa-check"></i>演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題1-5"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題2-5"><i class="fa fa-check"></i>問題2</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題3-4"><i class="fa fa-check"></i>問題3</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題4-3"><i class="fa fa-check"></i>問題4</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題5-3"><i class="fa fa-check"></i>問題5</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題6-2"><i class="fa fa-check"></i>問題6</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題7-1"><i class="fa fa-check"></i>問題7</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題8-1"><i class="fa fa-check"></i>問題8</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題9-1"><i class="fa fa-check"></i>問題9</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#演習問題"><i class="fa fa-check"></i>演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題5"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題6"><i class="fa fa-check"></i>問題6</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題7"><i class="fa fa-check"></i>問題7</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題8"><i class="fa fa-check"></i>問題8</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題9"><i class="fa fa-check"></i>問題9</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第6章-平均値差と連関に関する推測.html"><a href="第6章-平均値差と連関に関する推測.html"><i class="fa fa-check"></i>第6章 平均値差と連関に関する推測</a><ul>
+<li><a href="t分布を用いた正確な検定p-161-163.html#t分布を用いた正確な検定p.161-163">6.1.1 <span class="math inline">\(t\)</span>分布を用いた正確な検定(p.161-163)</a></li>
+<li class="chapter" data-level="" data-path="効果量を用いた検定p-164.html"><a href="効果量を用いた検定p-164.html"><i class="fa fa-check"></i>6.1.2 効果量を用いた検定(p.164)</a></li>
+<li class="chapter" data-level="" data-path="検定力とサンプルサイズp-164-166.html"><a href="検定力とサンプルサイズp-164-166.html"><i class="fa fa-check"></i>6.1.3 検定力とサンプルサイズ(p.164 - 166)</a></li>
+<li class="chapter" data-level="" data-path="平均値差の区間推定p-167-168.html"><a href="平均値差の区間推定p-167-168.html"><i class="fa fa-check"></i>6.2.1 平均値差の区間推定(p.167 - 168)</a></li>
+<li class="chapter" data-level="" data-path="効果量の区間推定p-168-170.html"><a href="効果量の区間推定p-168-170.html"><i class="fa fa-check"></i>6.2.2 効果量の区間推定(p.168 - 170)</a></li>
+<li class="chapter" data-level="" data-path="帰無仮説の検定p-176-177.html"><a href="帰無仮説の検定p-176-177.html"><i class="fa fa-check"></i>6.3.1 帰無仮説の検定(p.176 - 177)</a></li>
+<li class="chapter" data-level="" data-path="平均値差の区間推定p-177-178.html"><a href="平均値差の区間推定p-177-178.html"><i class="fa fa-check"></i>6.3.2 平均値差の区間推定(p.177 - 178)</a></li>
+<li class="chapter" data-level="" data-path="問題の例p-178-179.html"><a href="問題の例p-178-179.html"><i class="fa fa-check"></i>6.4.1 問題の例(p.178 - 179)</a></li>
+<li class="chapter" data-level="" data-path="独立な2群の比率差の検定p-180-181.html"><a href="独立な2群の比率差の検定p-180-181.html"><i class="fa fa-check"></i>6.4.2 独立な2群の比率差の検定(p.180 - 181)</a></li>
+<li class="chapter" data-level="" data-path="対応のある2群の比率差の検定p-181-183.html"><a href="対応のある2群の比率差の検定p-181-183.html"><i class="fa fa-check"></i>6.4.3 対応のある2群の比率差の検定(p.181 - 183)</a></li>
+<li class="chapter" data-level="" data-path="カイ2乗統計量p-184-187.html"><a href="カイ2乗統計量p-184-187.html"><i class="fa fa-check"></i>6.5.1 カイ2乗統計量(p.184 - 187)</a></li>
+<li class="chapter" data-level="" data-path="クラメルの連関係数とファイ係数p-187-188.html"><a href="クラメルの連関係数とファイ係数p-187-188.html"><i class="fa fa-check"></i>6.5.2 クラメルの連関係数とファイ係数(p.187 - 188)</a></li>
+<li class="chapter" data-level="" data-path="連関の検定p-188-189.html"><a href="連関の検定p-188-189.html"><i class="fa fa-check"></i>6.5.3 連関の検定(p.188 - 189)</a></li>
+<li class="chapter" data-level="" data-path="連関の検定と比率差の検定の関係p-189-190.html"><a href="連関の検定と比率差の検定の関係p-189-190.html"><i class="fa fa-check"></i>6.5.4 連関の検定と比率差の検定の関係(P.189 - 190)</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#演習問題"><i class="fa fa-check"></i>演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題5"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題6"><i class="fa fa-check"></i>問題6</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題7"><i class="fa fa-check"></i>問題7</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題8"><i class="fa fa-check"></i>問題8</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題9"><i class="fa fa-check"></i>問題9</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題10"><i class="fa fa-check"></i>問題10</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題11"><i class="fa fa-check"></i>問題11</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -290,25 +322,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>標準正規分布に従う乱数を1個取り出す作業を1000回繰り返し，<code>std.norm.1</code>というオブジェクトに代入します。</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1"><span class="kw">set.seed</span>(<span class="dv">1234</span>)</a>
-<a class="sourceLine" id="cb55-2" title="2">std.norm<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb55-3" title="3"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>){</a>
-<a class="sourceLine" id="cb55-4" title="4">  std.norm<span class="fl">.1</span>[i] &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb55-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb55-1"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb55-2"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb55-2"></a>std.norm<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb55-3"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb55-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>){</span>
+<span id="cb55-4"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb55-4"></a>  std.norm<span class="fl">.1</span>[i] &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb55-5"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb55-5"></a>}</span></code></pre></div>
 <ul>
 <li><span class="math inline">\(N = 1\)</span>の時は平均を求める必要がない(1で割ることになる)ので，<code>std.norm,1</code>がそのまま標本平均となります。<br />
 <br></li>
 <li>標本平均<span class="math inline">\(\bar{x}\)</span>の平均と標準偏差を求めます。</li>
 </ul>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="kw">mean</span>(std.norm<span class="fl">.1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb56-1"></a><span class="kw">mean</span>(std.norm<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## [1] -0.0265972</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1"><span class="kw">sd</span>(std.norm<span class="fl">.1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb58-1"></a><span class="kw">sd</span>(std.norm<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9973377</code></pre>
 <ul>
 <li><p>標本平均<span class="math inline">\(\bar{x}\)</span>の平均は0，標準偏差は<span class="math inline">\(\frac{1}{\sqrt{1}} = 1\)</span>に近い値となっていることがわかります。</p></li>
 <li><p>得られた1000個の標本平均をヒストグラムで示します。</p></li>
 </ul>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1"><span class="kw">hist</span>(std.norm<span class="fl">.1</span>, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb60-1"></a><span class="kw">hist</span>(std.norm<span class="fl">.1</span>, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div>
 <p><img src="psych_stat_files/figure-html/unnamed-chunk-32-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p>標本平均<span class="math inline">\(\bar{x}\)</span>のヒストグラムは，左右対称の釣り鐘型になっています。<br />
@@ -319,11 +351,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>乱数を3個取り出す作業を1000回繰り返し，<code>std.norm.3</code>というオブジェクトに代入します。</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1"><span class="kw">set.seed</span>(<span class="dv">1234</span>)</a>
-<a class="sourceLine" id="cb61-2" title="2">std.norm<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">nrow =</span> <span class="dv">1000</span>)</a>
-<a class="sourceLine" id="cb61-3" title="3"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>){</a>
-<a class="sourceLine" id="cb61-4" title="4">  std.norm<span class="fl">.3</span>[i, ] &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">3</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb61-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb61-1"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb61-2"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb61-2"></a>std.norm<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">nrow =</span> <span class="dv">1000</span>)</span>
+<span id="cb61-3"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb61-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>){</span>
+<span id="cb61-4"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb61-4"></a>  std.norm<span class="fl">.3</span>[i, ] &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">3</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb61-5"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb61-5"></a>}</span></code></pre></div>
 <ul>
 <li>コンソールに<code>std.norm.3</code>と直接入力すると，乱数が確認できます。<br />
 <br></li>
@@ -332,19 +364,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="alert alert-info">
 <p>行列形式のデータで平均を求めるときには，行平均は<code>rowMeans()</code>関数，列平均は<code>colMeans()</code>関数を使います。</p>
 </div>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1">std.norm<span class="fl">.3</span>_mean &lt;-<span class="st"> </span><span class="kw">rowMeans</span>(std.norm<span class="fl">.3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb62-1"></a>std.norm<span class="fl">.3</span>_mean &lt;-<span class="st"> </span><span class="kw">rowMeans</span>(std.norm<span class="fl">.3</span>)</span></code></pre></div>
 <ul>
 <li>最後に標本平均<span class="math inline">\(\bar{x}\)</span>の平均と標準偏差を求めます。</li>
 </ul>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1"><span class="kw">mean</span>(std.norm<span class="fl">.3</span>_mean)</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb63-1"></a><span class="kw">mean</span>(std.norm<span class="fl">.3</span>_mean)</span></code></pre></div>
 <pre><code>## [1] 0.005620729</code></pre>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1"><span class="kw">sd</span>(std.norm<span class="fl">.3</span>_mean)</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb65-1"></a><span class="kw">sd</span>(std.norm<span class="fl">.3</span>_mean)</span></code></pre></div>
 <pre><code>## [1] 0.5702766</code></pre>
 <ul>
 <li><p>標本平均<span class="math inline">\(\bar{x}\)</span>の平均は0付近，標準偏差は<span class="math inline">\(1 / \sqrt{3}\)</span>の0.577に近い値となっています。</p></li>
 <li><p>得られた1000個の標本平均をヒストグラムで示します。</p></li>
 </ul>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1"><span class="kw">hist</span>(std.norm<span class="fl">.3</span>_mean, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb67-1"></a><span class="kw">hist</span>(std.norm<span class="fl">.3</span>_mean, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div>
 <p><img src="psych_stat_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p><span class="math inline">\(N = 1\)</span>の時と比較して，母集団平均<span class="math inline">\(\mu\)</span>に集中した形になっていることがわかります。<br />
@@ -354,29 +386,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>乱数を10個取り出す作業を1000回繰り返し，<code>std.norm.10</code>というオブジェクトに代入します。</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1"><span class="kw">set.seed</span>(<span class="dv">1234</span>)</a>
-<a class="sourceLine" id="cb68-2" title="2">std.norm<span class="fl">.10</span> &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>, <span class="dt">ncol =</span> <span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">1000</span>)</a>
-<a class="sourceLine" id="cb68-3" title="3"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>){</a>
-<a class="sourceLine" id="cb68-4" title="4">  std.norm<span class="fl">.10</span>[i, ] &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb68-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb68-1"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb68-2"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb68-2"></a>std.norm<span class="fl">.10</span> &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>, <span class="dt">ncol =</span> <span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">1000</span>)</span>
+<span id="cb68-3"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb68-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>){</span>
+<span id="cb68-4"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb68-4"></a>  std.norm<span class="fl">.10</span>[i, ] &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb68-5"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb68-5"></a>}</span></code></pre></div>
 <ul>
 <li>10個の乱数の標本平均を求め，<code>std.norm.10_mean</code>というオブジェクトに代入します。</li>
 </ul>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1">std.norm<span class="fl">.10</span>_mean &lt;-<span class="st"> </span><span class="kw">rowMeans</span>(std.norm<span class="fl">.10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb69-1"></a>std.norm<span class="fl">.10</span>_mean &lt;-<span class="st"> </span><span class="kw">rowMeans</span>(std.norm<span class="fl">.10</span>)</span></code></pre></div>
 <ul>
 <li>最後に標本平均<span class="math inline">\(\bar{x}\)</span>の平均と標準偏差を求めます。</li>
 </ul>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1"><span class="kw">mean</span>(std.norm<span class="fl">.10</span>_mean)</a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb70-1"></a><span class="kw">mean</span>(std.norm<span class="fl">.10</span>_mean)</span></code></pre></div>
 <pre><code>## [1] 0.006115893</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1"><span class="kw">sd</span>(std.norm<span class="fl">.10</span>_mean)</a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb72-1"></a><span class="kw">sd</span>(std.norm<span class="fl">.10</span>_mean)</span></code></pre></div>
 <pre><code>## [1] 0.3030795</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1"><span class="kw">sqrt</span>(<span class="kw">mean</span>((std.norm<span class="fl">.10</span>_mean <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(std.norm<span class="fl">.10</span>_mean))<span class="op">^</span><span class="dv">2</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb74-1"></a><span class="kw">sqrt</span>(<span class="kw">mean</span>((std.norm<span class="fl">.10</span>_mean <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(std.norm<span class="fl">.10</span>_mean))<span class="op">^</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 0.3029279</code></pre>
 <ul>
 <li><p>標本平均<span class="math inline">\(\bar{x}\)</span>の平均は0付近，標準偏差は<span class="math inline">\(1 / \sqrt{10}\)</span>の0.316に近い値となっています。</p></li>
 <li><p>得られた1000個の標本平均をヒストグラムで示します。</p></li>
 </ul>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" title="1"><span class="kw">hist</span>(std.norm<span class="fl">.10</span>_mean, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb76-1"></a><span class="kw">hist</span>(std.norm<span class="fl">.10</span>_mean, <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div>
 <p><img src="psych_stat_files/figure-html/unnamed-chunk-40-1.png" width="672" style="display: block; margin: auto;" />
 <br></p>
 <p><br></p>
@@ -386,12 +418,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="alert alert-info">
 <p><code>pnorm()</code>関数はある値までの確率を求めます。ある値以上の確率を求めるには，すべての確率を足し合わせると1になるという性質を利用します。</p>
 </div>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" title="1"><span class="kw">pnorm</span>(<span class="dv">49</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span> <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">25</span>)) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">51</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span> <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">25</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb77-1"></a><span class="kw">pnorm</span>(<span class="dv">49</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span> <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">25</span>)) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">51</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span> <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">25</span>)))</span></code></pre></div>
 <pre><code>## [1] 0.6170751</code></pre>
 <ul>
 <li>教科書の変形(<span class="math inline">\(Prob(z &gt; .5) \times 2\)</span>)を使って以下のコードでも同じ結果となります。</li>
 </ul>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" title="1">(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">0.5</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)) <span class="op">*</span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb79-1"></a>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">0.5</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)) <span class="op">*</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 0.6170751</code></pre>
 <details>
 <p><summary>
@@ -402,9 +434,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - 上側確率を求めたいときには，<code>lower.tail = FALSE</code>と指定してください。<br />
 <br>
 -以下の2つのコードは同じ結果が得られます。</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" title="1"><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">1.96</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb81-1"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">1.96</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0249979</code></pre>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1"><span class="kw">pnorm</span>(<span class="fl">1.96</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html#cb83-1"></a><span class="kw">pnorm</span>(<span class="fl">1.96</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0249979</code></pre>
 </details>
 </div>

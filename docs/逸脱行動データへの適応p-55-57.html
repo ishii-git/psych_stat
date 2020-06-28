@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.2.1 逸脱行動データへの適応(p.55-57) | 心理統計学の基礎</title>
   <meta name="description" content="3.2.1 逸脱行動データへの適応(p.55-57) | 心理統計学の基礎" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.2.1 逸脱行動データへの適応(p.55-57) | 心理統計学の基礎" />
   <meta property="og:type" content="book" />
@@ -48,12 +48,13 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -62,14 +63,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -78,9 +81,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -161,16 +164,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="予測値と残差の分散p-60-62.html"><a href="予測値と残差の分散p-60-62.html"><i class="fa fa-check"></i>3.3.2 予測値と残差の分散(p.60-62)</a></li>
 <li class="chapter" data-level="" data-path="予測の標準誤差p-62-63.html"><a href="予測の標準誤差p-62-63.html"><i class="fa fa-check"></i>3.3.3 予測の標準誤差(p.62-63)</a></li>
 <li class="chapter" data-level="" data-path="選抜による集団の等質性の変化の影響p-69-72.html"><a href="選抜による集団の等質性の変化の影響p-69-72.html"><i class="fa fa-check"></i>3.4.1 選抜による集団の等質性の変化の影響(p.69-72)</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html"><i class="fa fa-check"></i>演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題1-1"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題2-1"><i class="fa fa-check"></i>問題2</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題3-1"><i class="fa fa-check"></i>問題3</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題4-1"><i class="fa fa-check"></i>問題4</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題5-1"><i class="fa fa-check"></i>問題5</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題6-1"><i class="fa fa-check"></i>問題6</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題7"><i class="fa fa-check"></i>問題7</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題8"><i class="fa fa-check"></i>問題8</a></li>
-<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題9"><i class="fa fa-check"></i>問題9</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#演習問題"><i class="fa fa-check"></i>演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題5"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題6"><i class="fa fa-check"></i>問題6</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題7"><i class="fa fa-check"></i>問題7</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題8"><i class="fa fa-check"></i>問題8</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題9"><i class="fa fa-check"></i>問題9</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="第4章-確率モデルと標本分布.html"><a href="第4章-確率モデルと標本分布.html"><i class="fa fa-check"></i>第4章 確率モデルと標本分布</a><ul>
@@ -189,12 +192,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="比率の標本分布の標準偏差p-100.html"><a href="比率の標本分布の標準偏差p-100.html"><i class="fa fa-check"></i>4.1.5 比率の標本分布の標準偏差(p.100)</a></li>
 <li class="chapter" data-level="" data-path="標準誤差に基づくサンプルサイズの決定p-101-102.html"><a href="標準誤差に基づくサンプルサイズの決定p-101-102.html"><i class="fa fa-check"></i>4.1.6 標準誤差に基づくサンプルサイズの決定(p.101-102)</a></li>
 <li class="chapter" data-level="" data-path="逸脱行動データにおける比率の変動p-102-103.html"><a href="逸脱行動データにおける比率の変動p-102-103.html"><i class="fa fa-check"></i>4.1.7 逸脱行動データにおける比率の変動(p.102-103)</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html"><i class="fa fa-check"></i>4.1 演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題1-2"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題2-2"><i class="fa fa-check"></i>問題2</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題3-2"><i class="fa fa-check"></i>問題3</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題4-2"><i class="fa fa-check"></i>問題4</a></li>
-<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題5-2"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#演習問題"><i class="fa fa-check"></i>4.1 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題5"><i class="fa fa-check"></i>問題5</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="正規分布の確率の求め方p-106-109.html"><a href="正規分布の確率の求め方p-106-109.html"><i class="fa fa-check"></i>4.2.1 正規分布の確率の求め方(p.106-109)</a><ul>
 <li class="chapter" data-level="" data-path="正規分布の確率の求め方p-106-109.html"><a href="正規分布の確率の求め方p-106-109.html#確率密度関数を積分する方法"><i class="fa fa-check"></i>確率密度関数を積分する方法</a></li>
@@ -202,17 +205,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="正規分布を仮定したときの平均の標本分布p-109-111.html"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html"><i class="fa fa-check"></i>4.2.2 正規分布を仮定したときの平均の標本分布(p.109-111)</a></li>
 <li class="chapter" data-level="" data-path="逸脱行動データにおける平均の変動p-111.html"><a href="逸脱行動データにおける平均の変動p-111.html"><i class="fa fa-check"></i>4.2.3 逸脱行動データにおける平均の変動(p.111)</a></li>
-<li class="chapter" data-level="" data-path="演習問題-3.html"><a href="演習問題-3.html"><i class="fa fa-check"></i>4.2 演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-3.html"><a href="演習問題-3.html#問題1-3"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-3.html"><a href="演習問題-3.html#問題2-3"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html"><i class="fa fa-check"></i>4.2 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題1-1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-1.html"><a href="演習問題-1.html#問題2-1"><i class="fa fa-check"></i>問題2</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="相関係数の標本分布.html"><a href="相関係数の標本分布.html"><i class="fa fa-check"></i>4.3.1 相関係数の標本分布</a></li>
 <li class="chapter" data-level="" data-path="相関係数に関する確率計算p-115-117.html"><a href="相関係数に関する確率計算p-115-117.html"><i class="fa fa-check"></i>4.3.2 相関係数に関する確率計算(p.115-117)</a></li>
 <li class="chapter" data-level="" data-path="回帰分析のための確率モデルp-118-119.html"><a href="回帰分析のための確率モデルp-118-119.html"><i class="fa fa-check"></i>4.3.3 回帰分析のための確率モデル(p.118-119)</a></li>
-<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html"><i class="fa fa-check"></i>4.3 演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html#問題1-4"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html#問題2-4"><i class="fa fa-check"></i>問題2</a></li>
-<li class="chapter" data-level="" data-path="演習問題-4.html"><a href="演習問題-4.html#問題3-3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html"><i class="fa fa-check"></i>4.3 演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題1-2"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題2-2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題-2.html"><a href="演習問題-2.html#問題3-1"><i class="fa fa-check"></i>問題3</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="第5章-推定と検定の考え方.html"><a href="第5章-推定と検定の考え方.html"><i class="fa fa-check"></i>第5章 推定と検定の考え方</a><ul>
@@ -231,16 +234,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="任意の相関値を帰無仮説とした検定.html"><a href="任意の相関値を帰無仮説とした検定.html"><i class="fa fa-check"></i>5.4.1 任意の相関値を帰無仮説とした検定</a></li>
 <li class="chapter" data-level="" data-path="信頼区間の算出.html"><a href="信頼区間の算出.html"><i class="fa fa-check"></i>5.4.2 信頼区間の算出</a></li>
 <li class="chapter" data-level="" data-path="信頼区間を利用したサンプルサイズの決定.html"><a href="信頼区間を利用したサンプルサイズの決定.html"><i class="fa fa-check"></i>5.4.3 信頼区間を利用したサンプルサイズの決定</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html"><i class="fa fa-check"></i>演習問題</a><ul>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題1-5"><i class="fa fa-check"></i>問題1</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題2-5"><i class="fa fa-check"></i>問題2</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題3-4"><i class="fa fa-check"></i>問題3</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題4-3"><i class="fa fa-check"></i>問題4</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題5-3"><i class="fa fa-check"></i>問題5</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題6-2"><i class="fa fa-check"></i>問題6</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題7-1"><i class="fa fa-check"></i>問題7</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題8-1"><i class="fa fa-check"></i>問題8</a></li>
-<li class="chapter" data-level="" data-path="演習問題-5.html"><a href="演習問題-5.html#問題9-1"><i class="fa fa-check"></i>問題9</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#演習問題"><i class="fa fa-check"></i>演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題5"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題6"><i class="fa fa-check"></i>問題6</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題7"><i class="fa fa-check"></i>問題7</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題8"><i class="fa fa-check"></i>問題8</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題9"><i class="fa fa-check"></i>問題9</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第6章-平均値差と連関に関する推測.html"><a href="第6章-平均値差と連関に関する推測.html"><i class="fa fa-check"></i>第6章 平均値差と連関に関する推測</a><ul>
+<li><a href="t分布を用いた正確な検定p-161-163.html#t分布を用いた正確な検定p.161-163">6.1.1 <span class="math inline">\(t\)</span>分布を用いた正確な検定(p.161-163)</a></li>
+<li class="chapter" data-level="" data-path="効果量を用いた検定p-164.html"><a href="効果量を用いた検定p-164.html"><i class="fa fa-check"></i>6.1.2 効果量を用いた検定(p.164)</a></li>
+<li class="chapter" data-level="" data-path="検定力とサンプルサイズp-164-166.html"><a href="検定力とサンプルサイズp-164-166.html"><i class="fa fa-check"></i>6.1.3 検定力とサンプルサイズ(p.164 - 166)</a></li>
+<li class="chapter" data-level="" data-path="平均値差の区間推定p-167-168.html"><a href="平均値差の区間推定p-167-168.html"><i class="fa fa-check"></i>6.2.1 平均値差の区間推定(p.167 - 168)</a></li>
+<li class="chapter" data-level="" data-path="効果量の区間推定p-168-170.html"><a href="効果量の区間推定p-168-170.html"><i class="fa fa-check"></i>6.2.2 効果量の区間推定(p.168 - 170)</a></li>
+<li class="chapter" data-level="" data-path="帰無仮説の検定p-176-177.html"><a href="帰無仮説の検定p-176-177.html"><i class="fa fa-check"></i>6.3.1 帰無仮説の検定(p.176 - 177)</a></li>
+<li class="chapter" data-level="" data-path="平均値差の区間推定p-177-178.html"><a href="平均値差の区間推定p-177-178.html"><i class="fa fa-check"></i>6.3.2 平均値差の区間推定(p.177 - 178)</a></li>
+<li class="chapter" data-level="" data-path="問題の例p-178-179.html"><a href="問題の例p-178-179.html"><i class="fa fa-check"></i>6.4.1 問題の例(p.178 - 179)</a></li>
+<li class="chapter" data-level="" data-path="独立な2群の比率差の検定p-180-181.html"><a href="独立な2群の比率差の検定p-180-181.html"><i class="fa fa-check"></i>6.4.2 独立な2群の比率差の検定(p.180 - 181)</a></li>
+<li class="chapter" data-level="" data-path="対応のある2群の比率差の検定p-181-183.html"><a href="対応のある2群の比率差の検定p-181-183.html"><i class="fa fa-check"></i>6.4.3 対応のある2群の比率差の検定(p.181 - 183)</a></li>
+<li class="chapter" data-level="" data-path="カイ2乗統計量p-184-187.html"><a href="カイ2乗統計量p-184-187.html"><i class="fa fa-check"></i>6.5.1 カイ2乗統計量(p.184 - 187)</a></li>
+<li class="chapter" data-level="" data-path="クラメルの連関係数とファイ係数p-187-188.html"><a href="クラメルの連関係数とファイ係数p-187-188.html"><i class="fa fa-check"></i>6.5.2 クラメルの連関係数とファイ係数(p.187 - 188)</a></li>
+<li class="chapter" data-level="" data-path="連関の検定p-188-189.html"><a href="連関の検定p-188-189.html"><i class="fa fa-check"></i>6.5.3 連関の検定(p.188 - 189)</a></li>
+<li class="chapter" data-level="" data-path="連関の検定と比率差の検定の関係p-189-190.html"><a href="連関の検定と比率差の検定の関係p-189-190.html"><i class="fa fa-check"></i>6.5.4 連関の検定と比率差の検定の関係(P.189 - 190)</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#演習問題"><i class="fa fa-check"></i>演習問題</a><ul>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題1"><i class="fa fa-check"></i>問題1</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題2"><i class="fa fa-check"></i>問題2</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題3"><i class="fa fa-check"></i>問題3</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題4"><i class="fa fa-check"></i>問題4</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題5"><i class="fa fa-check"></i>問題5</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題6"><i class="fa fa-check"></i>問題6</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題7"><i class="fa fa-check"></i>問題7</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題8"><i class="fa fa-check"></i>問題8</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題9"><i class="fa fa-check"></i>問題9</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題10"><i class="fa fa-check"></i>問題10</a></li>
+<li class="chapter" data-level="" data-path="演習問題.html"><a href="演習問題.html#問題11"><i class="fa fa-check"></i>問題11</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -289,11 +321,11 @@ a &amp;= \bar{y} - b \bar{x} \tag{3.14}\\
 <li><p>男子の逸脱行動データ(<code>dat_M</code>)で<span class="math inline">\(a\)</span>，<span class="math inline">\(b\)</span>を計算してみましょう。</p></li>
 <li><p>共分散<span class="math inline">\(s _{xy}\)</span>と変数<span class="math inline">\(x\)</span>の標準偏差<span class="math inline">\(s _{x}\)</span>，変数<span class="math inline">\(y\)</span>の標準偏差<span class="math inline">\(s_{y}\)</span>は先ほど計算した<code>soukan</code>，<code>sd_x</code>，<code>sd_y</code>を使います。</p></li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">b_M &lt;-<span class="st"> </span>soukan <span class="op">*</span><span class="st"> </span>(sd_y <span class="op">/</span><span class="st"> </span>sd_x)</a>
-<a class="sourceLine" id="cb29-2" title="2">b_M</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="逸脱行動データへの適応p-55-57.html#cb29-1"></a>b_M &lt;-<span class="st"> </span>soukan <span class="op">*</span><span class="st"> </span>(sd_y <span class="op">/</span><span class="st"> </span>sd_x)</span>
+<span id="cb29-2"><a href="逸脱行動データへの適応p-55-57.html#cb29-2"></a>b_M</span></code></pre></div>
 <pre><code>## [1] 0.5848126</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">a_M  &lt;-<span class="st"> </span><span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_8th) <span class="op">-</span><span class="st"> </span>(b_M <span class="op">*</span><span class="st"> </span><span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_6th))</a>
-<a class="sourceLine" id="cb31-2" title="2">a_M</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="逸脱行動データへの適応p-55-57.html#cb31-1"></a>a_M  &lt;-<span class="st"> </span><span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_8th) <span class="op">-</span><span class="st"> </span>(b_M <span class="op">*</span><span class="st"> </span><span class="kw">mean</span>(dat_M<span class="op">$</span>Grade_6th))</span>
+<span id="cb31-2"><a href="逸脱行動データへの適応p-55-57.html#cb31-2"></a>a_M</span></code></pre></div>
 <pre><code>## [1] 7.22288</code></pre>
 <ul>
 <li><span class="math inline">\(\hat{y}\)</span> = 7.22 + 0.58<span class="math inline">\(x\)</span>という結果になりました。<br />
@@ -307,28 +339,28 @@ a &amp;= \bar{y} - b \bar{x} \tag{3.14}\\
 </li>
 <li>女子の逸脱行動データを<code>dat_F</code>というオブジェクトに代入します。</li>
 </ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">dat_F &lt;-<span class="st"> </span><span class="kw">subset</span>(dat, sex <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="逸脱行動データへの適応p-55-57.html#cb33-1"></a>dat_F &lt;-<span class="st"> </span><span class="kw">subset</span>(dat, sex <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</span></code></pre></div>
 <ul>
 <li>標準偏差と相関係数を計算します。</li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1">hensa_x_F &lt;-<span class="st"> </span>dat_F<span class="op">$</span>Grade_6th <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(dat_F<span class="op">$</span>Grade_6th)</a>
-<a class="sourceLine" id="cb34-2" title="2">hensa_y_F &lt;-<span class="st"> </span>dat_F<span class="op">$</span>Grade_8th <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(dat_F<span class="op">$</span>Grade_8th)</a>
-<a class="sourceLine" id="cb34-3" title="3">sd_x_F &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">mean</span>(hensa_x_F <span class="op">^</span><span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb34-4" title="4">sd_y_F &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">mean</span>(hensa_y_F <span class="op">^</span><span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb34-5" title="5">sd_x_F</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="逸脱行動データへの適応p-55-57.html#cb34-1"></a>hensa_x_F &lt;-<span class="st"> </span>dat_F<span class="op">$</span>Grade_6th <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(dat_F<span class="op">$</span>Grade_6th)</span>
+<span id="cb34-2"><a href="逸脱行動データへの適応p-55-57.html#cb34-2"></a>hensa_y_F &lt;-<span class="st"> </span>dat_F<span class="op">$</span>Grade_8th <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(dat_F<span class="op">$</span>Grade_8th)</span>
+<span id="cb34-3"><a href="逸脱行動データへの適応p-55-57.html#cb34-3"></a>sd_x_F &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">mean</span>(hensa_x_F <span class="op">^</span><span class="dv">2</span>))</span>
+<span id="cb34-4"><a href="逸脱行動データへの適応p-55-57.html#cb34-4"></a>sd_y_F &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">mean</span>(hensa_y_F <span class="op">^</span><span class="dv">2</span>))</span>
+<span id="cb34-5"><a href="逸脱行動データへの適応p-55-57.html#cb34-5"></a>sd_x_F</span></code></pre></div>
 <pre><code>## [1] 3.014963</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1">sd_y_F</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="逸脱行動データへの適応p-55-57.html#cb36-1"></a>sd_y_F</span></code></pre></div>
 <pre><code>## [1] 3.247691</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">cor</span>(dat_F<span class="op">$</span>Grade_6th, dat_F<span class="op">$</span>Grade_8th)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="逸脱行動データへの適応p-55-57.html#cb38-1"></a><span class="kw">cor</span>(dat_F<span class="op">$</span>Grade_6th, dat_F<span class="op">$</span>Grade_8th)</span></code></pre></div>
 <pre><code>## [1] 0.5050212</code></pre>
 <ul>
 <li><span class="math inline">\(a\)</span>，<span class="math inline">\(b\)</span>を計算します。</li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">b_F &lt;-<span class="st"> </span><span class="kw">cor</span>(dat_F<span class="op">$</span>Grade_6th, dat_F<span class="op">$</span>Grade_8th) <span class="op">*</span>(sd_y_F <span class="op">/</span><span class="st"> </span>sd_x_F)</a>
-<a class="sourceLine" id="cb40-2" title="2">b_F</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="逸脱行動データへの適応p-55-57.html#cb40-1"></a>b_F &lt;-<span class="st"> </span><span class="kw">cor</span>(dat_F<span class="op">$</span>Grade_6th, dat_F<span class="op">$</span>Grade_8th) <span class="op">*</span>(sd_y_F <span class="op">/</span><span class="st"> </span>sd_x_F)</span>
+<span id="cb40-2"><a href="逸脱行動データへの適応p-55-57.html#cb40-2"></a>b_F</span></code></pre></div>
 <pre><code>## [1] 0.5440044</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">a_F &lt;-<span class="st"> </span><span class="kw">mean</span>(dat_F<span class="op">$</span>Grade_8th) <span class="op">-</span><span class="st"> </span>(b_F <span class="op">*</span><span class="st"> </span><span class="kw">mean</span>(dat_F<span class="op">$</span>Grade_6th))</a>
-<a class="sourceLine" id="cb42-2" title="2">a_F</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="逸脱行動データへの適応p-55-57.html#cb42-1"></a>a_F &lt;-<span class="st"> </span><span class="kw">mean</span>(dat_F<span class="op">$</span>Grade_8th) <span class="op">-</span><span class="st"> </span>(b_F <span class="op">*</span><span class="st"> </span><span class="kw">mean</span>(dat_F<span class="op">$</span>Grade_6th))</span>
+<span id="cb42-2"><a href="逸脱行動データへの適応p-55-57.html#cb42-2"></a>a_F</span></code></pre></div>
 <pre><code>## [1] 8.608361</code></pre>
 <ul>
 <li>回帰直線は<span class="math inline">\(\hat{y}\)</span> = 8.61 + 0.54<span class="math inline">\(x\)</span>になります。<br />
@@ -354,36 +386,36 @@ a &amp;= \bar{y} - b \bar{x} \tag{3.14}\\
 </ul></li>
 </ul>
 </div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">plot</span>(dat_M<span class="op">$</span>Grade_6th, dat_M<span class="op">$</span>Grade_8th, </a>
-<a class="sourceLine" id="cb44-2" title="2">     <span class="dt">pch =</span> <span class="dv">16</span>,</a>
-<a class="sourceLine" id="cb44-3" title="3">     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>), </a>
-<a class="sourceLine" id="cb44-4" title="4">     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">22</span>), </a>
-<a class="sourceLine" id="cb44-5" title="5">     <span class="dt">las =</span> <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb44-6" title="6">     <span class="dt">bty =</span> <span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb44-7" title="7">     <span class="dt">tcl =</span> <span class="fl">0.2</span>,</a>
-<a class="sourceLine" id="cb44-8" title="8">     <span class="dt">xaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</a>
-<a class="sourceLine" id="cb44-9" title="9">     <span class="dt">yaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</a>
-<a class="sourceLine" id="cb44-10" title="10">     <span class="dt">xlab =</span> <span class="st">&quot;小6の時の逸脱行動得点x&quot;</span>,</a>
-<a class="sourceLine" id="cb44-11" title="11">     <span class="dt">ylab =</span> <span class="st">&quot;中2の時の逸脱行動得点y&quot;</span>,</a>
-<a class="sourceLine" id="cb44-12" title="12">     <span class="dt">main =</span>  <span class="st">&quot;男子の逸脱行動得点&quot;</span>)</a>
-<a class="sourceLine" id="cb44-13" title="13"><span class="kw">abline</span>(<span class="dt">a =</span> a_M, <span class="dt">b =</span> b_M)</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="逸脱行動データへの適応p-55-57.html#cb44-1"></a><span class="kw">plot</span>(dat_M<span class="op">$</span>Grade_6th, dat_M<span class="op">$</span>Grade_8th, </span>
+<span id="cb44-2"><a href="逸脱行動データへの適応p-55-57.html#cb44-2"></a>     <span class="dt">pch =</span> <span class="dv">16</span>,</span>
+<span id="cb44-3"><a href="逸脱行動データへの適応p-55-57.html#cb44-3"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>), </span>
+<span id="cb44-4"><a href="逸脱行動データへの適応p-55-57.html#cb44-4"></a>     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">22</span>), </span>
+<span id="cb44-5"><a href="逸脱行動データへの適応p-55-57.html#cb44-5"></a>     <span class="dt">las =</span> <span class="dv">1</span>,</span>
+<span id="cb44-6"><a href="逸脱行動データへの適応p-55-57.html#cb44-6"></a>     <span class="dt">bty =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb44-7"><a href="逸脱行動データへの適応p-55-57.html#cb44-7"></a>     <span class="dt">tcl =</span> <span class="fl">0.2</span>,</span>
+<span id="cb44-8"><a href="逸脱行動データへの適応p-55-57.html#cb44-8"></a>     <span class="dt">xaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</span>
+<span id="cb44-9"><a href="逸脱行動データへの適応p-55-57.html#cb44-9"></a>     <span class="dt">yaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</span>
+<span id="cb44-10"><a href="逸脱行動データへの適応p-55-57.html#cb44-10"></a>     <span class="dt">xlab =</span> <span class="st">&quot;小6の時の逸脱行動得点x&quot;</span>,</span>
+<span id="cb44-11"><a href="逸脱行動データへの適応p-55-57.html#cb44-11"></a>     <span class="dt">ylab =</span> <span class="st">&quot;中2の時の逸脱行動得点y&quot;</span>,</span>
+<span id="cb44-12"><a href="逸脱行動データへの適応p-55-57.html#cb44-12"></a>     <span class="dt">main =</span>  <span class="st">&quot;男子の逸脱行動得点&quot;</span>)</span>
+<span id="cb44-13"><a href="逸脱行動データへの適応p-55-57.html#cb44-13"></a><span class="kw">abline</span>(<span class="dt">a =</span> a_M, <span class="dt">b =</span> b_M)</span></code></pre></div>
 <p><img src="psych_stat_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>同様に女子のデータをプロットします。</li>
 </ul>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">plot</span>(dat_F<span class="op">$</span>Grade_6th, dat_F<span class="op">$</span>Grade_8th, </a>
-<a class="sourceLine" id="cb45-2" title="2">     <span class="dt">pch =</span> <span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb45-3" title="3">     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>), </a>
-<a class="sourceLine" id="cb45-4" title="4">     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">22</span>), </a>
-<a class="sourceLine" id="cb45-5" title="5">     <span class="dt">las =</span> <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb45-6" title="6">     <span class="dt">bty =</span> <span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb45-7" title="7">     <span class="dt">tcl =</span> <span class="fl">0.2</span>,</a>
-<a class="sourceLine" id="cb45-8" title="8">     <span class="dt">xaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</a>
-<a class="sourceLine" id="cb45-9" title="9">     <span class="dt">yaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</a>
-<a class="sourceLine" id="cb45-10" title="10">     <span class="dt">xlab =</span> <span class="st">&quot;小6の時の逸脱行動得点x&quot;</span>,</a>
-<a class="sourceLine" id="cb45-11" title="11">     <span class="dt">ylab =</span> <span class="st">&quot;中2の時の逸脱行動得点y&quot;</span>,</a>
-<a class="sourceLine" id="cb45-12" title="12">     <span class="dt">main =</span>  <span class="st">&quot;女子の逸脱行動得点&quot;</span>)</a>
-<a class="sourceLine" id="cb45-13" title="13"><span class="kw">abline</span>(<span class="dt">a =</span> a_F, <span class="dt">b =</span> b_F)</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="逸脱行動データへの適応p-55-57.html#cb45-1"></a><span class="kw">plot</span>(dat_F<span class="op">$</span>Grade_6th, dat_F<span class="op">$</span>Grade_8th, </span>
+<span id="cb45-2"><a href="逸脱行動データへの適応p-55-57.html#cb45-2"></a>     <span class="dt">pch =</span> <span class="dv">2</span>,</span>
+<span id="cb45-3"><a href="逸脱行動データへの適応p-55-57.html#cb45-3"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>), </span>
+<span id="cb45-4"><a href="逸脱行動データへの適応p-55-57.html#cb45-4"></a>     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">22</span>), </span>
+<span id="cb45-5"><a href="逸脱行動データへの適応p-55-57.html#cb45-5"></a>     <span class="dt">las =</span> <span class="dv">1</span>,</span>
+<span id="cb45-6"><a href="逸脱行動データへの適応p-55-57.html#cb45-6"></a>     <span class="dt">bty =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb45-7"><a href="逸脱行動データへの適応p-55-57.html#cb45-7"></a>     <span class="dt">tcl =</span> <span class="fl">0.2</span>,</span>
+<span id="cb45-8"><a href="逸脱行動データへの適応p-55-57.html#cb45-8"></a>     <span class="dt">xaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</span>
+<span id="cb45-9"><a href="逸脱行動データへの適応p-55-57.html#cb45-9"></a>     <span class="dt">yaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</span>
+<span id="cb45-10"><a href="逸脱行動データへの適応p-55-57.html#cb45-10"></a>     <span class="dt">xlab =</span> <span class="st">&quot;小6の時の逸脱行動得点x&quot;</span>,</span>
+<span id="cb45-11"><a href="逸脱行動データへの適応p-55-57.html#cb45-11"></a>     <span class="dt">ylab =</span> <span class="st">&quot;中2の時の逸脱行動得点y&quot;</span>,</span>
+<span id="cb45-12"><a href="逸脱行動データへの適応p-55-57.html#cb45-12"></a>     <span class="dt">main =</span>  <span class="st">&quot;女子の逸脱行動得点&quot;</span>)</span>
+<span id="cb45-13"><a href="逸脱行動データへの適応p-55-57.html#cb45-13"></a><span class="kw">abline</span>(<span class="dt">a =</span> a_F, <span class="dt">b =</span> b_F)</span></code></pre></div>
 <p><img src="psych_stat_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p><code>plot()</code>関数の引数<code>pch</code>で散布図のマーカーを三角に変更しています。<code>abline()</code>関数では，女子のデータで計算した結果<code>a_F</code>と<code>b_F</code>を傾きと切片に指定しています。</p></li>
@@ -391,30 +423,30 @@ a &amp;= \bar{y} - b \bar{x} \tag{3.14}\\
 </p></li>
 <li><p>男子のマーカーと回帰直線は赤色に変更しています。</p></li>
 </ul>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">plot</span>(<span class="dv">0</span>, <span class="dv">0</span>, </a>
-<a class="sourceLine" id="cb46-2" title="2">     <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>,</a>
-<a class="sourceLine" id="cb46-3" title="3">     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>), </a>
-<a class="sourceLine" id="cb46-4" title="4">     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">22</span>), </a>
-<a class="sourceLine" id="cb46-5" title="5">     <span class="dt">las =</span> <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb46-6" title="6">     <span class="dt">bty =</span> <span class="st">&quot;l&quot;</span>,</a>
-<a class="sourceLine" id="cb46-7" title="7">     <span class="dt">tcl =</span> <span class="fl">0.2</span>,</a>
-<a class="sourceLine" id="cb46-8" title="8">     <span class="dt">xaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</a>
-<a class="sourceLine" id="cb46-9" title="9">     <span class="dt">yaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</a>
-<a class="sourceLine" id="cb46-10" title="10">     <span class="dt">xlab =</span> <span class="st">&quot;小6の時の逸脱行動得点x&quot;</span>,</a>
-<a class="sourceLine" id="cb46-11" title="11">     <span class="dt">ylab =</span> <span class="st">&quot;中2の時の逸脱行動得点y&quot;</span>)</a>
-<a class="sourceLine" id="cb46-12" title="12"></a>
-<a class="sourceLine" id="cb46-13" title="13"><span class="kw">points</span>(dat_M<span class="op">$</span>Grade_6th, dat_M<span class="op">$</span>Grade_8th,</a>
-<a class="sourceLine" id="cb46-14" title="14">       <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
-<a class="sourceLine" id="cb46-15" title="15"><span class="kw">points</span>(dat_F<span class="op">$</span>Grade_6th, dat_F<span class="op">$</span>Grade_8th,</a>
-<a class="sourceLine" id="cb46-16" title="16">       <span class="dt">pch =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb46-17" title="17"><span class="kw">abline</span>(<span class="dt">a =</span> a_M, <span class="dt">b =</span> b_M,</a>
-<a class="sourceLine" id="cb46-18" title="18">       <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
-<a class="sourceLine" id="cb46-19" title="19"><span class="kw">abline</span>(<span class="dt">a =</span> a_F, <span class="dt">b =</span> b_F)</a>
-<a class="sourceLine" id="cb46-20" title="20"></a>
-<a class="sourceLine" id="cb46-21" title="21"><span class="kw">legend</span>(<span class="st">&quot;bottomright&quot;</span>, </a>
-<a class="sourceLine" id="cb46-22" title="22">       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;男子&quot;</span>, <span class="st">&quot;女&quot;</span>),</a>
-<a class="sourceLine" id="cb46-23" title="23">       <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">16</span>, <span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb46-24" title="24">       <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="逸脱行動データへの適応p-55-57.html#cb46-1"></a><span class="kw">plot</span>(<span class="dv">0</span>, <span class="dv">0</span>, </span>
+<span id="cb46-2"><a href="逸脱行動データへの適応p-55-57.html#cb46-2"></a>     <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>,</span>
+<span id="cb46-3"><a href="逸脱行動データへの適応p-55-57.html#cb46-3"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>), </span>
+<span id="cb46-4"><a href="逸脱行動データへの適応p-55-57.html#cb46-4"></a>     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">22</span>), </span>
+<span id="cb46-5"><a href="逸脱行動データへの適応p-55-57.html#cb46-5"></a>     <span class="dt">las =</span> <span class="dv">1</span>,</span>
+<span id="cb46-6"><a href="逸脱行動データへの適応p-55-57.html#cb46-6"></a>     <span class="dt">bty =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb46-7"><a href="逸脱行動データへの適応p-55-57.html#cb46-7"></a>     <span class="dt">tcl =</span> <span class="fl">0.2</span>,</span>
+<span id="cb46-8"><a href="逸脱行動データへの適応p-55-57.html#cb46-8"></a>     <span class="dt">xaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</span>
+<span id="cb46-9"><a href="逸脱行動データへの適応p-55-57.html#cb46-9"></a>     <span class="dt">yaxp =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">22</span>, <span class="dv">11</span>),</span>
+<span id="cb46-10"><a href="逸脱行動データへの適応p-55-57.html#cb46-10"></a>     <span class="dt">xlab =</span> <span class="st">&quot;小6の時の逸脱行動得点x&quot;</span>,</span>
+<span id="cb46-11"><a href="逸脱行動データへの適応p-55-57.html#cb46-11"></a>     <span class="dt">ylab =</span> <span class="st">&quot;中2の時の逸脱行動得点y&quot;</span>)</span>
+<span id="cb46-12"><a href="逸脱行動データへの適応p-55-57.html#cb46-12"></a></span>
+<span id="cb46-13"><a href="逸脱行動データへの適応p-55-57.html#cb46-13"></a><span class="kw">points</span>(dat_M<span class="op">$</span>Grade_6th, dat_M<span class="op">$</span>Grade_8th,</span>
+<span id="cb46-14"><a href="逸脱行動データへの適応p-55-57.html#cb46-14"></a>       <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb46-15"><a href="逸脱行動データへの適応p-55-57.html#cb46-15"></a><span class="kw">points</span>(dat_F<span class="op">$</span>Grade_6th, dat_F<span class="op">$</span>Grade_8th,</span>
+<span id="cb46-16"><a href="逸脱行動データへの適応p-55-57.html#cb46-16"></a>       <span class="dt">pch =</span> <span class="dv">2</span>)</span>
+<span id="cb46-17"><a href="逸脱行動データへの適応p-55-57.html#cb46-17"></a><span class="kw">abline</span>(<span class="dt">a =</span> a_M, <span class="dt">b =</span> b_M,</span>
+<span id="cb46-18"><a href="逸脱行動データへの適応p-55-57.html#cb46-18"></a>       <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb46-19"><a href="逸脱行動データへの適応p-55-57.html#cb46-19"></a><span class="kw">abline</span>(<span class="dt">a =</span> a_F, <span class="dt">b =</span> b_F)</span>
+<span id="cb46-20"><a href="逸脱行動データへの適応p-55-57.html#cb46-20"></a></span>
+<span id="cb46-21"><a href="逸脱行動データへの適応p-55-57.html#cb46-21"></a><span class="kw">legend</span>(<span class="st">&quot;bottomright&quot;</span>, </span>
+<span id="cb46-22"><a href="逸脱行動データへの適応p-55-57.html#cb46-22"></a>       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;男子&quot;</span>, <span class="st">&quot;女&quot;</span>),</span>
+<span id="cb46-23"><a href="逸脱行動データへの適応p-55-57.html#cb46-23"></a>       <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">16</span>, <span class="dv">2</span>),</span>
+<span id="cb46-24"><a href="逸脱行動データへの適応p-55-57.html#cb46-24"></a>       <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
 <p><img src="psych_stat_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>男女の逸脱行動データの散布図に，それぞれの回帰直線<span class="math inline">\(\hat{y}\)</span> = 7.22 + 0.58<span class="math inline">\(x\)</span>と<span class="math inline">\(\hat{y}\)</span> = 8.61 + 0.54<span class="math inline">\(x\)</span>が書き込まれていることを確認してください。</li>
@@ -445,9 +477,9 @@ a &amp;= \bar{y} - b \bar{x} \tag{3.14}\\
 <li><code>lm()</code>関数の引数<code>data</code>で使うデータフレームを指定します。今回<code>dat_M</code>と<code>dat_F</code>では使用している列名が同じなので，どちらも<code>formula</code>オブジェクト内では同じ列名(<code>Grade_8th</code>と<code>Grade_6th</code>)を使用しています。</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1">fit_M &lt;-<span class="st"> </span><span class="kw">lm</span>(Grade_8th <span class="op">~</span><span class="st"> </span>Grade_6th, <span class="dt">data =</span> dat_M)</a>
-<a class="sourceLine" id="cb47-2" title="2">fit_F &lt;-<span class="st"> </span><span class="kw">lm</span>(Grade_8th <span class="op">~</span><span class="st"> </span>Grade_6th, <span class="dt">data =</span> dat_F)</a>
-<a class="sourceLine" id="cb47-3" title="3">fit_M</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="逸脱行動データへの適応p-55-57.html#cb47-1"></a>fit_M &lt;-<span class="st"> </span><span class="kw">lm</span>(Grade_8th <span class="op">~</span><span class="st"> </span>Grade_6th, <span class="dt">data =</span> dat_M)</span>
+<span id="cb47-2"><a href="逸脱行動データへの適応p-55-57.html#cb47-2"></a>fit_F &lt;-<span class="st"> </span><span class="kw">lm</span>(Grade_8th <span class="op">~</span><span class="st"> </span>Grade_6th, <span class="dt">data =</span> dat_F)</span>
+<span id="cb47-3"><a href="逸脱行動データへの適応p-55-57.html#cb47-3"></a>fit_M</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Grade_8th ~ Grade_6th, data = dat_M)
@@ -455,7 +487,7 @@ a &amp;= \bar{y} - b \bar{x} \tag{3.14}\\
 ## Coefficients:
 ## (Intercept)    Grade_6th  
 ##      7.2229       0.5848</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1">fit_F</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="逸脱行動データへの適応p-55-57.html#cb49-1"></a>fit_F</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Grade_8th ~ Grade_6th, data = dat_F)
@@ -470,7 +502,7 @@ a &amp;= \bar{y} - b \bar{x} \tag{3.14}\\
 <br></li>
 <li>より詳しい分析結果を確認するには，分析結果を代入したオブジェクトに対して<code>summary()</code>関数を適用します。</li>
 </ul>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">summary</span>(fit_M)</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="逸脱行動データへの適応p-55-57.html#cb51-1"></a><span class="kw">summary</span>(fit_M)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Grade_8th ~ Grade_6th, data = dat_M)
@@ -487,9 +519,9 @@ a &amp;= \bar{y} - b \bar{x} \tag{3.14}\\
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 3.219 on 18 degrees of freedom
-## Multiple R-squared:  0.3581, Adjusted R-squared:  0.3224 
+## Multiple R-squared:  0.3581,	Adjusted R-squared:  0.3224 
 ## F-statistic: 10.04 on 1 and 18 DF,  p-value: 0.005316</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1"><span class="kw">summary</span>(fit_F)</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="逸脱行動データへの適応p-55-57.html#cb53-1"></a><span class="kw">summary</span>(fit_F)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Grade_8th ~ Grade_6th, data = dat_F)
@@ -506,7 +538,7 @@ a &amp;= \bar{y} - b \bar{x} \tag{3.14}\\
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 2.955 on 18 degrees of freedom
-## Multiple R-squared:  0.255,  Adjusted R-squared:  0.2137 
+## Multiple R-squared:  0.255,	Adjusted R-squared:  0.2137 
 ## F-statistic: 6.163 on 1 and 18 DF,  p-value: 0.02314</code></pre>
 <ul>
 <li>回帰係数は，先ほどと同様に<code>Coefficients</code>の<code>Estimate</code>行の値を確認してください。<br />
