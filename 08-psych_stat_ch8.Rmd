@@ -624,13 +624,15 @@ kyocho <- read.csv(file = "data/kyocho_data.csv")
 - 協調性データを標準化します。
 
 ```{r}
+s_1 <- sqrt(mean((kyocho$Mother - mean(kyocho$Mother))^2))
 s_2 <- sqrt(mean((kyocho$year - mean(kyocho$year))^2))
 s_y <- sqrt(mean((kyocho$kyocho - mean(kyocho$kyocho))^2))
+std_1 <- (kyocho$Mother - mean(kyocho$Mother)) /s_1
 std_2 <- (kyocho$year - mean(kyocho$year)) /s_2
 std_y <- (kyocho$kyocho - mean(kyocho$kyocho)) /s_y
 ```  
 
-- 変数$x_2$(通園年数)，変数$y$(協調性得点)を標準化した`std_2`，`std_y`がそれぞれ平均0，標準偏差1になっているか確認してください。
+- 変数$x _1$(母親価値)，変数$x_2$(通園年数)，変数$y$(協調性得点)を標準化した`std_1`，`std_2`，`std_y`がそれぞれ平均0，標準偏差1になっているか確認してください。
 
 
 
@@ -638,12 +640,21 @@ std_y <- (kyocho$kyocho - mean(kyocho$kyocho)) /s_y
 
 - **問題6**    
 
+- 標準化した`std_1`，`std_2`，`std_y`を用いて重回帰分析を行ってください。出力結果の標準偏回帰係数が(8.18)式，(8.19)式の結果と一致することを確認してください。  
+
+
+
+<br>
+
+
+- **問題7**    
+
 - 標準化した`std_2`，`std_y`を用いて残差変数$x_{2} | x _{1}$，および$y |x _{1}$を求め，その標準偏差が$\sqrt{1 - r ^2 _{12}}$，$\sqrt{1 - r ^2 _{y1}}$となることを確認してください(教科書p.234)。
 
 
 <br>
 
-- **問題7**     
+- **問題8**     
 
 - (8.27)式にある全体の平方和$SS_{y}$を`SS_y`，予測値の平方和$SS_\hat{y}$を`SS_haty`，残差の平方和$SS_{e}$を`SS_e`というオブジェクトに計算結果を代入します。    
 
@@ -659,7 +670,7 @@ SS_e <- sum((lm_multi$residuals - mean(lm_multi$residuals))^2)
 
 <br>
 
-- **問題8**    
+- **問題9**    
 
 - 協調性データについて，独立変数が$x _{1}$のみであったモデルに$x _{2}$を追加したときの$x_{2}$の寄与に関する$F$値((8.44)式)，(8.47)式の$t$統計量の値を求め，$F$値が$t$値の2乗の関係になっているか確認してください(教科書p.262)。
 
