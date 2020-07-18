@@ -1,0 +1,666 @@
+# 第8章 平均値差と連関に関する推測 {-}
+
+## 8.1.1 データと基本統計量(p.225 - 227)  {-} 
+
+- 教科書p.226の表8-1にある50組の母子の協調性データを表す`kyocho_data.csv`ファイルをダウンロードしてください。ダウンロード後，「psych_stat」フォルダの「data」フォルダの中に移動してください。  
+
+- `kyocho`というオブジェクト名でデータをRに読み込みます。`read.csv`関数を使ってデータを読み込みます。
+
+
+```{r}
+kyocho <- read.csv(file = "data/kyocho_data.csv")
+```
+
+- 読み込んだ`kyocho`データの冒頭と末尾6行を確認します。  
+
+```{r}
+head(kyocho)
+tail(kyocho)
+```  
+
+- 1列目`Mother`は「母親価値」，`year`は「通園年数」，`kyocho`は「協調性」の列を表しています。1行目から50行目まで読み込まれていることを確認してください。  
+
+
+- 表8-2にある基本統計量を算出します。今回，母親価値，通園年数，協調性の3つの列についてそれぞれ平均を求める必要があります。行と列をもつデータ構造で列平均を求めるには`colMeans()`関数を使います(Mが大文字であることを注意してください)。  
+
+```{r}
+colMeans(kyocho)
+```  
+
+- 標準偏差(標本分散の正の平方根)をそれぞれ計算して求めます。  
+
+```{r}
+sqrt(mean((kyocho$Mother - mean(kyocho$Mother))^2))
+sqrt(mean((kyocho$year - mean(kyocho$year))^2))
+sqrt(mean((kyocho$kyocho - mean(kyocho$kyocho))^2))
+```  
+
+- 相関係数を求めます。  
+
+<div class="alert alert-info">
+- `cor()`関数に行と列を持つデータを代入すると相関行列を計算します。相関行列は対角線を挟んで対称となるので，教科書の表8-2では右下のほうのみ掲載しています。  
+</div>
+
+```{r}
+cor(kyocho)
+```  
+
+ 
+
+
+## 8.1.2 残差への注目(p.227 - 229)  {-}  
+
+- $x _{1}$(`Mother`)によって$x _{2}$(`year`)を予測する回帰分析を行い，残差$x _{2}|x _{1}$を計算しましょう。  
+
+- 教科書第3章(p.54)の(3.13)，(3.14)式より予測値$\hat{x} _{2}$(`hat_year`)を求めます。  
+
+$$
+\begin{align}
+\hat{y} &= a + bx \tag{3.11}\\
+b &= r\frac{s _{y}}{s _{x}} \tag{3.13}\\
+a &= \bar{y} - b \bar{x} \tag{3.14}\\
+\end{align}
+$$  
+
+```{r}
+b <- cor(kyocho$Mother, kyocho$year) * (sd(kyocho$year) / sd(kyocho$Mother))
+a <- mean(kyocho$year) - b * mean(kyocho$Mother)
+hat_year <- a + b * kyocho$Mother
+```  
+
+- 残差は実際の値(`year`)と予測値(`hat_year`)とのずれなので，引き算で求めます。  
+
+```{r}
+e_year <- kyocho$year - hat_year
+e_year
+```  
+
+- 残差$x _{2}|x _{1}$(`e_year`)を求めました。残差の性質として，平均が0となります(p.58,(3.18)式)。0となるか確認しましょう。  
+
+```{r}
+mean(e_year)
+```  
+
+- 指数表示となっていますが，`round()`関数で数値を丸めると0であることがわかります。  
+
+```{r}
+round(mean(e_year), digits = 3)
+```  
+
+- 求めた残差$x _{2}|x _{1}$を使って図8-3を作図してみましょう。  
+
+```{r fig29, fig.align="center"}
+plot(e_year, kyocho$kyocho, 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     pch = 16,
+     xlim = c(-1.5, 1.5),
+     xaxp = c(-1.5, 1.5, 6))
+```  
+
+- 図8-3には，残差$x _{2}|x _{1}$によって子どもの協調性得点$y$を予測する回帰直線が書き込まれています。  
+- 先ほど$x _{2}$から$x _{1}$を予測するときには回帰直線の切片$a$と傾き$b$を計算で求めました。  
+
+- Rには回帰分析を行うための`lm()`関数があります(使い方は演習サイトの第3章3.1.1を確認してください)。  
+
+<div class="alert alert-info">
+- `lm()`関数では`formula`というクラスのオブジェクトを使います。`formula`オブジェクトでは，チルダ(`~`)の前に従属年数，後ろに独立変数を入力します。  
+</div>
+
+```{r}
+lm_kyocho_zansa <- lm(kyocho$kyocho ~ e_year)
+summary(lm_kyocho_zansa)
+```  
+
+- `lm()`関数の計算結果を代入したオブジェクトを`abline()`関数に入れると回帰直線を書き込んでくれます。先ほど作図した図8-3に`lm()`関数を使って計算した`lm_zansa_kyocho`の回帰直線を上書きします。`abline()`関数は必ず`plot()`関数と同時に実行するようにしてください。  
+
+
+```{r fig30, fig.align="center"}
+plot(e_year, kyocho$kyocho, 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     pch = 16,
+     xlim = c(-1.5, 1.5),
+     xaxp = c(-1.5, 1.5, 6))
+abline(lm_kyocho_zansa)
+```  
+
+- 図から比較的右肩上がりの関係が読み取れます。弱いながらも正の相関があることがわかります。  
+
+## 8.1.3 部分相関係数(p.229 - 230)  {-}    
+
+- `lm()`関数を使うと，計算結果をまとめたオブジェクトの中に残差の値も格納されます。先ほど計算した残差$x _{2}|x _{1}$(`e_year`)を`lm()`関数を使って求めましょう。  
+
+```{r}
+lm_year_Mother <- lm(kyocho$year ~ kyocho$Mother)
+```
+
+- 残差は`lm()`関数の計算結果を格納したオブジェクトの中の`residuals`にあります。  
+
+```{r}
+lm_year_Mother$residuals
+e_year
+```  
+
+
+- (8.1)式に基づいて$x_{2} | x _{1}$と$y$との相関係数(部分相関係数$r _{y(2|1)}$を求めましょう。  
+
+$$
+r _{y(2|1)} = \frac{r _{y2} - r_{y1}r _{12}}{\sqrt{1 - r ^{2} _{12}}} \tag{8.1}
+$$  
+
+
+```{r}
+(cor(kyocho$year, kyocho$kyocho) - (cor(kyocho$kyocho, kyocho$Mother) * cor(kyocho$Mother, kyocho$year))) / sqrt(1 - cor(kyocho$Mother, kyocho$year)^2)
+```  
+
+- 先ほど計算した残差と子どもの協調性得点(`kyocho$kyocho`)の相関を求めましょう。  
+
+```{r}
+cor(lm_year_Mother$residuals, kyocho$kyocho)
+```  
+
+- 残差を実際に求めた結果と(8.1)式に基づいて計算した結果が一致することがわかります。  
+
+
+## 8.1.4 偏相関係数(p.230 - 232)  {-}  
+
+- 8.1.2では残差$x _{2}| x_{1}$を`lm()`関数を用いて求めました。今回は，残差$y|x _{1}$を`lm()`関数を使って求めましょう。  
+
+```{r}
+lm_kyocho_Mother <- lm(kyocho$kyocho ~ kyocho$Mother)
+lm_kyocho_Mother $residuals
+```  
+
+- 残差$x _{2} | x _{1}$と残差$y | x _{1}$の散布図(図8-4)を作図しましょう。  
+
+```{r fig31, fig.align="center"}
+plot(lm_year_Mother$residuals, lm_kyocho_Mother$residuals, 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     pch = 16,
+     xlim = c(-1.5, 1.5),
+     xaxp = c(-1.5, 1.5, 6),
+     ylim = c(-6, 6),
+     yaxp = c(-5, 5, 5))
+```  
+
+- 同じように残差$x _{2} | x _{1}$と残差$y | x _{1}$の回帰分析を行い，回帰直線を上書きします。  
+
+```{r fig32, fig.align="center"}
+lm_zansa_zansa <- lm(lm_kyocho_Mother$residuals ~ lm_year_Mother$residuals)
+plot(lm_year_Mother$residuals, lm_kyocho_Mother$residuals, 
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     pch = 16,
+     xlim = c(-1.5, 1.5),
+     xaxp = c(-1.5, 1.5, 6),
+     ylim = c(-6, 6),
+     yaxp = c(-5, 5, 5))
+abline(lm_zansa_zansa)
+```  
+
+- (8.2)式に基づいて$y$と$x _{2}$の偏相関係数$r _{y 2|1}$を求めます。  
+
+```{r}
+(cor(kyocho$kyocho, kyocho$year) - (cor(kyocho$kyocho, kyocho$Mother) * cor(kyocho$Mother, kyocho$year))) /(sqrt(1 - cor(kyocho$kyocho, kyocho$Mother) ^2) * sqrt(1 - cor(kyocho$Mother, kyocho$year) ^2))
+```  
+
+
+## 8.2.1 偏回帰係数(p.232 - 234)  {-}  
+
+- (8.5)式に基づいて$x _{2} | x _{1}$から$y$を予測するときの回帰係数$b _{y(2|1)}$を求めます。  
+
+$$
+\begin{align}
+b _{y(2|1)} &= r _{y(2|1)}\frac{s _{y}}{s _{2|1}}\\
+&= \frac{r _{y2} - r _{y1} r_{12}}{\sqrt{1 - r ^{2} _{12}}} \times \frac{s _{y}}{s _{2}\sqrt{1 - r ^{2} _{12}}}\\
+&= \frac{r _{y2} - r _{y1} r_{12}}{1 - r ^{2} _{12}} \times \frac{s _{y}}{s _{2}}\tag{8.5}\\
+\end{align}
+$$    
+
+```{r}
+(cor(kyocho$kyocho, kyocho$year) - (cor(kyocho$kyocho, kyocho$Mother) * cor(kyocho$Mother, kyocho$year))) / (1 - cor(kyocho$Mother, kyocho$year)^2) * (sd(kyocho$kyocho) / sd(kyocho$year))
+```  
+
+
+- 図8-3と図8-4を作図するときに，それぞれ`lm()`関数で回帰分析を行いました。傾きの係数を比較します。  
+
+```{r}
+summary(lm_kyocho_zansa)
+summary(lm_zansa_zansa)
+```  
+
+- 出力結果のうち，`Coefficients`の段にある`Estimate`の列を確認してください。(Intercept)が切片$a$，その下の行(`e_year`)の値が傾き$b$を表します。`lm_zansa_zansa`は指数表示となっていますが`e+00`なので小数点の移動はありません。どちらも値が同じ事が確認できます。  
+
+
+## 8.2.2 標準偏回帰係数(p.234 - 235)  {-}  
+
+- (8.7)式に基づいて標準偏回帰係数$b ^{\ast} _{y(2|1)}$を求めます。  
+
+```{r}
+(cor(kyocho$kyocho, kyocho$year) - (cor(kyocho$kyocho, kyocho$Mother) * cor(kyocho$Mother, kyocho$year))) / (1 - cor(kyocho$Mother, kyocho$year)^2) 
+```  
+
+- (8.7)式の結果と，データを標準化して`lm()`関数を用いて求めた傾きが一致するか確認します。
+- 変数$x _{2}$(通園年数`year`)および$y$(協調性`kyocho`)を標準化して標準偏回帰係数を求めましょう。まずはそれぞれの標準偏差を`s_2`，`s_y`というオブジェクトに代入します。    
+
+```{r}
+s_2 <- sqrt(mean((kyocho$year - mean(kyocho$year))^2))
+s_y <- sqrt(mean((kyocho$kyocho - mean(kyocho$kyocho))^2))
+```  
+
+- 標準化したデータを`std_2`，`std_y`というオブジェクトに代入します。  
+
+```{r}
+std_2 <- (kyocho$year - mean(kyocho$year)) /s_2
+std_y <- (kyocho$kyocho - mean(kyocho$kyocho)) /s_y
+```  
+
+- `lm()`関数を用いて残差$x ^{\ast} _{2}|x _{1}$を求めます($x ^{\ast}$は標準化された変数$x _{2}$を表しています)。  
+
+```{r}
+lm_std2_x1 <- lm(std_2 ~kyocho$Mother)
+lm_std2_x1$residuals
+```  
+
+
+- 最後に回帰分析を行います。  
+
+```{r}
+lm_std <- lm(std_y ~lm_std2_x1$residuals)
+summary(lm_std)
+```  
+
+- 傾きを確認すると`3.424e-01`とあります。これは`3.424`の$10 ^{-1}$を表しています。Rで計算するときは，`3.424 * 10 ^(-1)`というコードを計算してください。小数点が前に一つ移動して，`0.3424`となり，(8.7)式で計算した結果と一致することがわかります。  
+
+
+
+## 8.3.1 最小2乗法による母数の推定(p.238 - 240)  {-}  
+
+
+- (8.15)式から(8.17)式に基づいて$b _{1}$，$b _{2}$，$a$を計算しましょう。  
+
+```{r}
+b_1 <- (cor(kyocho$kyocho, kyocho$Mother) - (cor(kyocho$kyocho, kyocho$year) * cor(kyocho$Mother, kyocho$year))) / (1 - cor(kyocho$Mother, kyocho$year)^2) * (sd(kyocho$kyocho) / sd(kyocho$Mother))
+
+b_2 <- (cor(kyocho$kyocho, kyocho$year) - (cor(kyocho$kyocho, kyocho$Mother) * cor(kyocho$Mother, kyocho$year))) / (1 - cor(kyocho$Mother, kyocho$year)^2) * (sd(kyocho$kyocho) / sd(kyocho$year))
+
+a <- mean(kyocho$kyocho) - b_1 * mean(kyocho$Mother) - b_2 * mean(kyocho$year)
+
+b_1
+b_2
+a
+```  
+
+- `lm()`関数で重回帰分析をおこなった結果と比較します。  
+
+```{r}
+lm_multi <- lm(kyocho$kyocho ~ kyocho$Mother + kyocho$year)
+summary(lm_multi)
+```  
+
+- 同様の結果が得られていることがわかります。  
+
+- (8.18)式，(8.19)式に従って標準偏回帰係数を計算しましょう。  
+
+```{r}
+b_1_ast <- (cor(kyocho$kyocho, kyocho$Mother) - (cor(kyocho$kyocho, kyocho$year) * cor(kyocho$Mother, kyocho$year))) / (1 - cor(kyocho$Mother, kyocho$year)^2) 
+
+b_2_ast <- (cor(kyocho$kyocho, kyocho$year) - (cor(kyocho$kyocho, kyocho$Mother) * cor(kyocho$Mother, kyocho$year))) / (1 - cor(kyocho$Mother, kyocho$year)^2) 
+
+b_1_ast
+b_2_ast
+```  
+
+
+## 8.3.2 重相関係数(p.240 - 241)  {-}  
+
+- (8.20)式に基づいて重相関係数を求めましょう。  
+
+```{r}
+sqrt((cor(kyocho$kyocho, kyocho$Mother) ^2 + cor(kyocho$kyocho, kyocho$year)^2 -2 * cor(kyocho$kyocho, kyocho$Mother) * cor(kyocho$kyocho, kyocho$year) * cor(kyocho$Mother, kyocho$year)) / (1 - cor(kyocho$Mother, kyocho$year) ^2))
+```  
+
+- 従属変数$y$と予測値$\hat{y}$の相関係数を求め，値が一致するか確認します。予測値を求めるには，`predict()`関数を用います。  
+
+<div class="alert alert-info">
+- `predict()`関数は第一引数に`lm()`関数の結果を代入したオブジェクト，第二引数にデータを指定することで予測値$\hat{y}$の値を返してくれます。第二引数を指定しなければ推定時に用いたデータが用いられます。  
+</div>   
+
+```{r}
+lm_multi_pre <- predict(lm_multi)
+lm_multi_pre
+```  
+
+- 相関係数を計算します。  
+
+```{r}
+cor(kyocho$kyocho, lm_multi_pre)
+```  
+
+- 値が一致していることがわかります。  
+
+## 8.4.1 独立変数間の相関と重相関係数(p.244 - 245)  {-}  
+
+- 重相関係数を求める(8.20)式を関数として定義します。重相関係数の計算は$r _{y1}, r_{y2}, r_{12}$の3つが必要になります。関数の引数としてそれぞれ`r_y1`，`r_y2`，`r_12`とし，重相関係数を計算する`multi_cor()`関数を定義します。    
+
+```{r}
+multi_cor <- function(r_y1, r_y2, r_12){
+  sqrt((r_y1 ^2 + r_y2 ^2 -2 * r_y1 * r_y2 * r_12) / (1 - r_12 ^2))
+}
+```  
+
+- 定義した`multi_cor()`関数を使って教科書p.244の計算を行います。`multi_cor()`関数の第一引数には，$r _{y1}$，第二引数には$r_{y2}$，第三引数には$r_{12}$の値を代入してください。  
+
+- 独立変数間の相関を.$r = .54$から$r = .1$に変更(協調性と母親価値との相関，協調性と通園年数との相関は変更なし)  
+
+```{r}
+multi_cor(r_y1 = .48, r_y2 = .50, r_12 = .1)
+```  
+
+- 独立変数間の相関をゼロに変更  
+
+```{r}
+multi_cor(r_y1 = .48, r_y2 = .50, r_12 = 0)
+```  
+
+- 独立変数間の相関を$r = -.5$  
+
+```{r}
+multi_cor(r_y1 = .48, r_y2 = .50, r_12 = -0.5)
+```  
+
+- 定義した`multi_cor()`関数を使って図8-7を作図してみます。まずは$r _{y1} = r_{y2}= .2$の時を作図します。  
+
+
+```{r fig33, fig.align="center"}
+x <- seq(-1, 1, 0.01)
+plot(x, multi_cor(r_y1 = 0.2, r_y2 = 0.2, r_12 = x), 
+     type = "l",
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xlim = c(-1, 1), 
+     xaxp = c(-1, 1, 20),
+     ylim = c(0, 1), 
+     yaxp = c(0, 1, 5))
+```  
+
+- $r _{y1} = r_{y2}= .4$の線を赤色，と$r _{y1} = r_{y2}= .6$の線を青色で上書きします。  
+
+```{r fig34, fig.align="center"}
+x <- seq(-1, 1, 0.01)
+plot(x, multi_cor(r_y1 = 0.2, r_y2 = 0.2, r_12 = x), 
+     type = "l",
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xlim = c(-1, 1), 
+     xaxp = c(-1, 1, 20),
+     ylim = c(0, 1), 
+     yaxp = c(0, 1, 5))
+lines(x, multi_cor(r_y1 = 0.4, r_y2 = 0.4, r_12 = x), col = "red")
+lines(x, multi_cor(r_y1 = 0.6, r_y2 = 0.6, r_12 = x), col = "blue")
+abline(v = 0)
+legend("bottomleft", legend = c("r_y1 = r_y2 = .2","r_y1 = r_y2 = .4","r_y1 = r_y2 = .6"), col = c("black","red", "blue"), lty = 1)
+```  
+
+
+## 8.5.1 平方和の分割(p.250 - 251)  {-}    
+
+- (8.27)式の関係が成り立っているか確認しましょう。全体の平方和$SS_{y}$を`SS_y`，予測値の平方和$SS_\hat{y}$を`SS_haty`，残差の平方和$SS_{e}$を`SS_e`とします。    
+
+```{r}
+SS_y <- sum((kyocho$kyocho - mean(kyocho$kyocho))^2)
+SS_haty <- sum((lm_multi_pre - mean(lm_multi_pre))^2)
+SS_e <- sum((lm_multi$residuals - mean(lm_multi$residuals))^2)
+SS_y
+SS_haty + SS_e
+```
+
+- `SS_haty`と`SS_e`の和が`SS_y`に一致することがわかります。  
+
+- 表8-1の重相関係数を`multi_cor()`関数を使って計算しましょう。  
+
+```{r}
+R <- multi_cor(r_y1 = cor(kyocho$kyocho, kyocho$Mother), r_y2 = cor(kyocho$kyocho, kyocho$year), r_12 = cor(kyocho$Mother, kyocho$year))
+R
+```  
+
+- (8.28)式に従って分散説明率を計算します。  
+
+```{r}
+SS_haty / SS_y
+```  
+
+- 表8-1の重相関係数の2乗と一致するか確認します。 
+
+```{r}
+R ^2
+```  
+
+- 同じ値が計算できました。  
+
+- `lm()`関数では，分散説明率が出力結果に表示されます。もう一度結果を確認しましょう。  
+
+```{r}
+summary(lm_multi)
+```  
+
+- 出力結果の下から2行目を確認してください。`Multiple R-squared`という箇所に分散説明率が表示されています。先ほど求めた分散説明率(Rの2乗)と結果が一致しています。  
+
+
+## 8.5.2 予測の標準誤差と自由度調整済み重相関係数(p.252 - 253)  {-}   
+
+- (8.33)式の予測の標準誤差$s_{e}$を求めます。  
+
+```{r}
+s_e <- sqrt(mean((kyocho$kyocho - mean(kyocho$kyocho))^2)) * sqrt(1 - R^2)
+s_e
+```  
+
+- (8.34)式の予測の標準誤差$s ^{\prime} _{e}$を求めます。  
+
+```{r}
+s_e * sqrt(50 / (50 - 2 - 1))
+```  
+
+- (8.35)式に基づく自由度調整済み決定係数$R ^{2} _{adj}$を計算します。  
+
+```{r}
+1 - ((50 - 1) / (50 - 2 - 1)) * (1 - R^2)
+```  
+
+- (8.34)式に基づく予測の標準誤差$s ^{\prime} _{e}$と自由度調整済み決定係数$R ^{2} _{adj}$は`lm()`関数の出力結果に表示されています。再度，`lm()`関数の結果を確認します。  
+
+```{r}
+summary(lm_multi)
+```  
+
+- 予測の標準誤差$s ^{\prime} _{e}$は`Residual standard error`，自由度調整済み決定係数$R ^{2} _{adj}$は`Adjusted R-squared`の箇所に表示されています。(8.34)式，(8.35)式に基づく計算結果と同じ値が表示されていることが確認できます。  
+
+
+## 8.5.3 重相関係数の検定(p.253 - 255)  {-}    
+
+- (8.37)式に基づいて$F$統計量の値を計算します。  
+
+```{r}
+(R ^2 / 2) / ((1 - R^2) / 47)
+```  
+
+- 自由度(2,47)のF分布を確認してみましょう。  
+
+<div class="alert alert-info">
+- $F$分布の確率密度関数は`df()`関数，上側確率に対応する値を計算するには`qf()`関数を用います。`df()`関数の第一引数には確率密度を求めたい値，第二引数`df1`には分子の自由度，第三引数`df2`に分母の自由度を指定します。  
+</div>
+
+```{r fig35, fig.align="center"}
+x <- seq(0, 15, 0.01)
+plot(x, df(x, df1 = 2, df2 = 47), 
+     type = "l",
+     las = 1,
+     bty = "l",
+     tcl = 0.2,
+     xlab = "F")
+```  
+
+- 分子の自由度2,分母の自由度47の$F$分布の上側確率.05に対応する値を確認しましょう。  
+
+```{r}
+qf(0.950, 2, 47)
+```  
+
+- 計算された$F$統計量の値は3.195よりも大きいため，5%水準で棄却されます。  
+
+- 分子の自由度2,分母の自由度47のF分布で計算された$F$統計量の値より小さい値が得られる確率を計算します。  
+
+```{r}
+pf((R ^2 / 2) / ((1 - R^2) / 47), df1 = 2, df2 =47, lower.tail = FALSE)
+```  
+
+- 計算した$F$統計量の値とその$p$値は`lm()`関数の一番下の行に表示されています。  
+
+```{r}
+summary(lm_multi)
+```  
+
+
+## 8.5.4 独立変数の寄与の検定(p.256 - 258)  {-}    
+
+- (8.44)式に基づいて偏回帰係数$b _{2}$の優位性の検定のための$F$統計量の値を求めましょう。  
+
+```{r}
+(R^2 - cor(kyocho$kyocho, kyocho$Mother)^2) / ((1 - R^2) / 47)
+```  
+
+- 分子の自由度1，分母の自由度47の$F$分布の上側確率.05に対応する値を求めます。  
+
+```{r}
+qf(0.950, 1, 47)
+```  
+
+- 計算された$F$統計量は4.0471よりも大きいので5%水準で棄却され，偏回帰係数$b_{2}$は統計的に有意であることがわかります。  
+
+
+- (補足)：分子の自由度1，分母の自由度47の$F$分布において，求めた$F$統計量の値より小さい値が得られる確率を計算します。  
+
+```{r}
+pf((R^2 - cor(kyocho$kyocho, kyocho$Mother)^2) / ((1 - R^2) / 47), df1 = 2, df2 =47, lower.tail = FALSE)
+```  
+
+- $p$値が0.05よりも小さいので帰無仮説は棄却され，統計的に有意であるといえます。  
+
+
+## 8.5.5 偏回帰係数の標準誤差を用いた検定(p.260 - 262)  {-}    
+
+- (8.47)式に従って$t$統計量の値を求めます。  
+
+```{r}
+s_b2 <- (s_e * sqrt(50 / (50 - 2 - 1))) / (sqrt(50) * sqrt(mean((kyocho$year - mean(kyocho$year))^2)) * sqrt(1 - cor(kyocho$Mother,kyocho$year)^2))
+b_2 / s_b2
+```  
+
+- 自由度47の$t$分布の上側確率.05に対応する値を計算します。  
+
+```{r}
+qt(0.975, df = 47)
+```  
+
+- 計算された$t$統計量の値はこの値よりも大きいので，5%水準の両側検定で棄却され偏回帰係数$b _{2}$は統計的に有意であることがわかります。  
+
+- (補足)：自由度47の$t$分布において，求めた$t$統計量の値より小さい値が得られる確率を計算します。  
+
+```{r}
+pt(b_2 / s_b2, df = 47, lower.tail = FALSE)
+```  
+
+- $p$値が0.05よりも小さいので帰無仮説は棄却され，統計的に有意であるといえます。  
+
+
+
+## 8.6 第8章演習問題 {-}  
+
+- 以下のコードを実行してください。  
+
+```{r}
+kyocho <- read.csv(file = "data/kyocho_data.csv")
+```
+
+<br>
+
+- **問題1**    
+
+- 協調性データを用いて，(8.1)式に基づく部分相関係数$r   _{y(2|1)}$を計算してください($r   _{y(2|1)}$は8.1.3で一度求めています)。計算結果を`part_cor`というオブジェクトに代入してください。  
+
+<br>
+
+- **問題2**    
+
+- 協調性データを用いて，(8.2)式に基づく偏相関係数$r   _{y2|1}$を計算してください(8.1.4で一度求めています)。同様に，計算結果を`partial_cor`というオブジェクトに代入してください。    
+
+<br>
+
+- **問題3**    
+
+- 問題1，問題2で計算を行った`part_cor`，`partial_cor`を用いて(8.3)式の関係が成り立つか確認してください。    
+
+
+<br>
+
+- **問題4**    
+
+- (8.2)，(8.4)，(8.6)式を用いて，$x _{2}|x _{1}$から$y | x _{1}$を予測するときの回帰係数$b _{y2|1}$の式が(8.5)式と一致することを確認してください(この問題は提出する必要はありません)。  
+
+
+<br>
+
+- **問題5**    
+
+- 協調性データを標準化します。
+
+```{r}
+s_2 <- sqrt(mean((kyocho$year - mean(kyocho$year))^2))
+s_y <- sqrt(mean((kyocho$kyocho - mean(kyocho$kyocho))^2))
+std_2 <- (kyocho$year - mean(kyocho$year)) /s_2
+std_y <- (kyocho$kyocho - mean(kyocho$kyocho)) /s_y
+```  
+
+- 変数$x_2$(通園年数)，変数$y$(協調性得点)を標準化した`std_2`，`std_y`がそれぞれ平均0，標準偏差1になっているか確認してください。
+
+
+
+<br>
+
+- **問題6**    
+
+- 標準化した`std_2`，`std_y`を用いて残差変数$x_{2} | x _{1}$，および$y |x _{1}$を求め，その標準偏差が$\sqrt{1 - r ^2 _{12}}$，$\sqrt{1 - r ^2 _{y1}}$となることを確認してください(教科書p.234)。
+
+
+<br>
+
+- **問題7**     
+
+- (8.27)式にある全体の平方和$SS_{y}$を`SS_y`，予測値の平方和$SS_\hat{y}$を`SS_haty`，残差の平方和$SS_{e}$を`SS_e`というオブジェクトに計算結果を代入します。    
+
+```{r}
+lm_multi <- lm(kyocho$kyocho ~ kyocho$Mother + kyocho$year)
+lm_multi_pre <- predict(lm_multi)
+SS_y <- sum((kyocho$kyocho - mean(kyocho$kyocho))^2)
+SS_haty <- sum((lm_multi_pre - mean(lm_multi_pre))^2)
+SS_e <- sum((lm_multi$residuals - mean(lm_multi$residuals))^2)
+```  
+
+- 重相関係数$R$を求め，(8.29)式の関係が成立するか確認してください。  
+
+<br>
+
+- **問題8**    
+
+- 協調性データについて，独立変数が$x _{1}$のみであったモデルに$x _{2}$を追加したときの$x_{2}$の寄与に関する$F$値((8.44)式)，(8.47)式の$t$統計量の値を求め，$F$値が$t$値の2乗の関係になっているか確認してください(教科書p.262)。
+
+<br>

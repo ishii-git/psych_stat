@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8.1.3 部分相関係数(p.227 - 227) | 心理統計学の基礎</title>
+  <meta name="description" content="8.1.3 部分相関係数(p.227 - 227) | 心理統計学の基礎" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8.1.3 部分相関係数(p.227 - 227) | 心理統計学の基礎" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8.1.3 部分相関係数(p.227 - 227) | 心理統計学の基礎" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="残差への注目p-227-227.html"/>
+<link rel="next" href="偏相関係数p-227-227.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">心理統計学の基礎</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>本サイトについて</a></li>
+<li class="chapter" data-level="" data-path="第2章-分布の記述的指標とその性質.html"><a href="第2章-分布の記述的指標とその性質.html"><i class="fa fa-check"></i>第2章 分布の記述的指標とその性質</a><ul>
+<li class="chapter" data-level="" data-path="中央値p-19-20.html"><a href="中央値p-19-20.html"><i class="fa fa-check"></i>2.1.1 中央値(p.19-20)</a></li>
+<li class="chapter" data-level="" data-path="平均p-20-23.html"><a href="平均p-20-23.html"><i class="fa fa-check"></i>2.1.2 平均(p.20-23)</a></li>
+<li class="chapter" data-level="" data-path="逸脱行動データの代表値p-24-25.html"><a href="逸脱行動データの代表値p-24-25.html"><i class="fa fa-check"></i>2.1.3 逸脱行動データの代表値(p.24-25)</a></li>
+<li class="chapter" data-level="" data-path="合成変数の平均p-25-26.html"><a href="合成変数の平均p-25-26.html"><i class="fa fa-check"></i>2.1.4 合成変数の平均(p.25-26)</a></li>
+<li class="chapter" data-level="" data-path="合併した集団における平均p-26-27.html"><a href="合併した集団における平均p-26-27.html"><i class="fa fa-check"></i>2.1.5 合併した集団における平均(p.26-27)</a></li>
+<li class="chapter" data-level="" data-path="平均偏差p-28-29.html"><a href="平均偏差p-28-29.html"><i class="fa fa-check"></i>2.2.1 平均偏差(p.28-29)</a></li>
+<li class="chapter" data-level="" data-path="分散と標準偏差p-30-31.html"><a href="分散と標準偏差p-30-31.html"><i class="fa fa-check"></i>2.2.2 分散と標準偏差(p.30-31)</a></li>
+<li class="chapter" data-level="" data-path="不偏分散p-31-32.html"><a href="不偏分散p-31-32.html"><i class="fa fa-check"></i>2.2.3 不偏分散(p.31-32)</a></li>
+<li class="chapter" data-level="" data-path="合成変数の分散p-34-36.html"><a href="合成変数の分散p-34-36.html"><i class="fa fa-check"></i>2.2.4 合成変数の分散(p.34-36)</a></li>
+<li class="chapter" data-level="" data-path="合併した集団における分散p-36-37.html"><a href="合併した集団における分散p-36-37.html"><i class="fa fa-check"></i>2.2.5 合併した集団における分散(p.36-37)</a></li>
+<li class="chapter" data-level="" data-path="線形変換に伴う指標値の変化p-38.html"><a href="線形変換に伴う指標値の変化p-38.html"><i class="fa fa-check"></i>2.3.1 線形変換に伴う指標値の変化(p.38)</a></li>
+<li class="chapter" data-level="" data-path="変数の標準化p-38-39.html"><a href="変数の標準化p-38-39.html"><i class="fa fa-check"></i>2.3.2 変数の標準化(p.38-39)</a></li>
+<li class="chapter" data-level="" data-path="標準偏差の解釈についてp-40-41.html"><a href="標準偏差の解釈についてp-40-41.html"><i class="fa fa-check"></i>2.3.3 標準偏差の解釈について(p.40-41)</a></li>
+<li class="chapter" data-level="" data-path="第2章演習問題.html"><a href="第2章演習問題.html"><i class="fa fa-check"></i>2.4 第2章演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第3章-相関関係の把握と回帰分析.html"><a href="第3章-相関関係の把握と回帰分析.html"><i class="fa fa-check"></i>第3章 相関関係の把握と回帰分析</a><ul>
+<li class="chapter" data-level="" data-path="共分散と相関係数p-43-45.html"><a href="共分散と相関係数p-43-45.html"><i class="fa fa-check"></i>3.1.1 共分散と相関係数(p.43-45)</a></li>
+<li class="chapter" data-level="" data-path="共分散から相関係数へp-47-48.html"><a href="共分散から相関係数へp-47-48.html"><i class="fa fa-check"></i>3.1.2 共分散から相関係数へ(p.47-48)</a></li>
+<li class="chapter" data-level="" data-path="逸脱行動データへの適応p-55-57.html"><a href="逸脱行動データへの適応p-55-57.html"><i class="fa fa-check"></i>3.2.1 逸脱行動データへの適応(p.55-57)</a></li>
+<li class="chapter" data-level="" data-path="予測値と残差の平均と相関p-57-58.html"><a href="予測値と残差の平均と相関p-57-58.html"><i class="fa fa-check"></i>3.3.1 予測値と残差の平均と相関(p.57-58)</a></li>
+<li class="chapter" data-level="" data-path="予測値と残差の分散p-60-62.html"><a href="予測値と残差の分散p-60-62.html"><i class="fa fa-check"></i>3.3.2 予測値と残差の分散(p.60-62)</a></li>
+<li class="chapter" data-level="" data-path="予測の標準誤差p-62-63.html"><a href="予測の標準誤差p-62-63.html"><i class="fa fa-check"></i>3.3.3 予測の標準誤差(p.62-63)</a></li>
+<li class="chapter" data-level="" data-path="選抜による集団の等質性の変化の影響p-69-72.html"><a href="選抜による集団の等質性の変化の影響p-69-72.html"><i class="fa fa-check"></i>3.4.1 選抜による集団の等質性の変化の影響(p.69-72)</a></li>
+<li class="chapter" data-level="" data-path="第3章演習問題.html"><a href="第3章演習問題.html"><i class="fa fa-check"></i>3.5 第3章演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第4章-確率モデルと標本分布.html"><a href="第4章-確率モデルと標本分布.html"><i class="fa fa-check"></i>第4章 確率モデルと標本分布</a><ul>
+<li class="chapter" data-level="" data-path="比率の標本分布p-93-97.html"><a href="比率の標本分布p-93-97.html"><i class="fa fa-check"></i>4.1.1 比率の標本分布(p.93-97)</a></li>
+<li class="chapter" data-level="" data-path="確率分布の平均p-97-98.html"><a href="確率分布の平均p-97-98.html"><i class="fa fa-check"></i>4.1.2 確率分布の平均(p.97-98)</a></li>
+<li class="chapter" data-level="" data-path="比率の標本分布の平均p-98-99.html"><a href="比率の標本分布の平均p-98-99.html"><i class="fa fa-check"></i>4.1.3 比率の標本分布の平均(p.98-99)</a></li>
+<li class="chapter" data-level="" data-path="確率分布の標準偏差p-99-100.html"><a href="確率分布の標準偏差p-99-100.html"><i class="fa fa-check"></i>4.1.4 確率分布の標準偏差(p.99-100)</a></li>
+<li class="chapter" data-level="" data-path="比率の標本分布の標準偏差p-100.html"><a href="比率の標本分布の標準偏差p-100.html"><i class="fa fa-check"></i>4.1.5 比率の標本分布の標準偏差(p.100)</a></li>
+<li class="chapter" data-level="" data-path="標準誤差に基づくサンプルサイズの決定p-101-102.html"><a href="標準誤差に基づくサンプルサイズの決定p-101-102.html"><i class="fa fa-check"></i>4.1.6 標準誤差に基づくサンプルサイズの決定(p.101-102)</a></li>
+<li class="chapter" data-level="" data-path="逸脱行動データにおける比率の変動p-102-103.html"><a href="逸脱行動データにおける比率の変動p-102-103.html"><i class="fa fa-check"></i>4.1.7 逸脱行動データにおける比率の変動(p.102-103)</a></li>
+<li class="chapter" data-level="" data-path="正規分布の確率の求め方p-106-109.html"><a href="正規分布の確率の求め方p-106-109.html"><i class="fa fa-check"></i>4.2.1 正規分布の確率の求め方(p.106-109)</a><ul>
+<li class="chapter" data-level="" data-path="正規分布の確率の求め方p-106-109.html"><a href="正規分布の確率の求め方p-106-109.html#確率密度関数を積分する方法"><i class="fa fa-check"></i>確率密度関数を積分する方法</a></li>
+<li><a href="正規分布の確率の求め方p-106-109.html#pnorm関数を使った計算方法"><code>pnorm()</code>関数を使った計算方法</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="正規分布を仮定したときの平均の標本分布p-109-111.html"><a href="正規分布を仮定したときの平均の標本分布p-109-111.html"><i class="fa fa-check"></i>4.2.2 正規分布を仮定したときの平均の標本分布(p.109-111)</a></li>
+<li class="chapter" data-level="" data-path="逸脱行動データにおける平均の変動p-111.html"><a href="逸脱行動データにおける平均の変動p-111.html"><i class="fa fa-check"></i>4.2.3 逸脱行動データにおける平均の変動(p.111)</a></li>
+<li class="chapter" data-level="" data-path="相関係数の標本分布.html"><a href="相関係数の標本分布.html"><i class="fa fa-check"></i>4.3.1 相関係数の標本分布</a></li>
+<li class="chapter" data-level="" data-path="相関係数に関する確率計算p-115-117.html"><a href="相関係数に関する確率計算p-115-117.html"><i class="fa fa-check"></i>4.3.2 相関係数に関する確率計算(p.115-117)</a></li>
+<li class="chapter" data-level="" data-path="回帰分析のための確率モデルp-118-119.html"><a href="回帰分析のための確率モデルp-118-119.html"><i class="fa fa-check"></i>4.3.3 回帰分析のための確率モデル(p.118-119)</a></li>
+<li class="chapter" data-level="" data-path="第4章演習問題.html"><a href="第4章演習問題.html"><i class="fa fa-check"></i>4.4 第4章演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第5章-推定と検定の考え方.html"><a href="第5章-推定と検定の考え方.html"><i class="fa fa-check"></i>第5章 推定と検定の考え方</a><ul>
+<li class="chapter" data-level="" data-path="不偏推定量p-128-129.html"><a href="不偏推定量p-128-129.html"><i class="fa fa-check"></i>5.1.1 不偏推定量(p.128-129)</a><ul>
+<li><a href="不偏推定量p-128-129.html#母集団が標準正規分布の場合">母集団が<strong>(標準)正規分布</strong>の場合</a></li>
+<li><a href="不偏推定量p-128-129.html#母集団が2項分布の場合">母集団が<strong>2項分布</strong>の場合</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="最尤法.html"><a href="最尤法.html"><i class="fa fa-check"></i>5.1.2 最尤法</a></li>
+<li class="chapter" data-level="" data-path="標準誤差による推定制度の評価.html"><a href="標準誤差による推定制度の評価.html"><i class="fa fa-check"></i>5.1.3 標準誤差による推定制度の評価</a></li>
+<li class="chapter" data-level="" data-path="標準誤差に基づくサンプルサイズの決定.html"><a href="標準誤差に基づくサンプルサイズの決定.html"><i class="fa fa-check"></i>5.1.4 標準誤差に基づくサンプルサイズの決定</a></li>
+<li class="chapter" data-level="" data-path="検定統計量の帰無分布と棄却域.html"><a href="検定統計量の帰無分布と棄却域.html"><i class="fa fa-check"></i>5.2.1 検定統計量の帰無分布と棄却域</a></li>
+<li class="chapter" data-level="" data-path="有意水準.html"><a href="有意水準.html"><i class="fa fa-check"></i>5.2.2 有意水準</a></li>
+<li class="chapter" data-level="" data-path="t分布を用いた検定.html"><a href="t分布を用いた検定.html"><i class="fa fa-check"></i>5.2.3 t分布を用いた検定</a></li>
+<li class="chapter" data-level="" data-path="検定力の求め方.html"><a href="検定力の求め方.html"><i class="fa fa-check"></i>5.3.1 検定力の求め方</a></li>
+<li class="chapter" data-level="" data-path="検定力分析によるサンプルサイズの決定.html"><a href="検定力分析によるサンプルサイズの決定.html"><i class="fa fa-check"></i>5.3.2 検定力分析によるサンプルサイズの決定</a></li>
+<li class="chapter" data-level="" data-path="任意の相関値を帰無仮説とした検定.html"><a href="任意の相関値を帰無仮説とした検定.html"><i class="fa fa-check"></i>5.4.1 任意の相関値を帰無仮説とした検定</a></li>
+<li class="chapter" data-level="" data-path="信頼区間の算出.html"><a href="信頼区間の算出.html"><i class="fa fa-check"></i>5.4.2 信頼区間の算出</a></li>
+<li class="chapter" data-level="" data-path="信頼区間を利用したサンプルサイズの決定.html"><a href="信頼区間を利用したサンプルサイズの決定.html"><i class="fa fa-check"></i>5.4.3 信頼区間を利用したサンプルサイズの決定</a></li>
+<li class="chapter" data-level="" data-path="第5章演習問題.html"><a href="第5章演習問題.html"><i class="fa fa-check"></i>5.5 第5章演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第6章-平均値差と連関に関する推測.html"><a href="第6章-平均値差と連関に関する推測.html"><i class="fa fa-check"></i>第6章 平均値差と連関に関する推測</a><ul>
+<li><a href="t分布を用いた正確な検定p-161-163.html#t分布を用いた正確な検定p.161-163">6.1.1 <span class="math inline">\(t\)</span>分布を用いた正確な検定(p.161-163)</a></li>
+<li class="chapter" data-level="" data-path="効果量を用いた検定p-164.html"><a href="効果量を用いた検定p-164.html"><i class="fa fa-check"></i>6.1.2 効果量を用いた検定(p.164)</a></li>
+<li class="chapter" data-level="" data-path="検定力とサンプルサイズp-164-166.html"><a href="検定力とサンプルサイズp-164-166.html"><i class="fa fa-check"></i>6.1.3 検定力とサンプルサイズ(p.164 - 166)</a></li>
+<li class="chapter" data-level="" data-path="平均値差の区間推定p-167-168.html"><a href="平均値差の区間推定p-167-168.html"><i class="fa fa-check"></i>6.2.1 平均値差の区間推定(p.167 - 168)</a></li>
+<li class="chapter" data-level="" data-path="効果量の区間推定p-168-170.html"><a href="効果量の区間推定p-168-170.html"><i class="fa fa-check"></i>6.2.2 効果量の区間推定(p.168 - 170)</a></li>
+<li class="chapter" data-level="" data-path="帰無仮説の検定p-176-177.html"><a href="帰無仮説の検定p-176-177.html"><i class="fa fa-check"></i>6.3.1 帰無仮説の検定(p.176 - 177)</a></li>
+<li class="chapter" data-level="" data-path="平均値差の区間推定p-177-178.html"><a href="平均値差の区間推定p-177-178.html"><i class="fa fa-check"></i>6.3.2 平均値差の区間推定(p.177 - 178)</a></li>
+<li class="chapter" data-level="" data-path="問題の例p-178-179.html"><a href="問題の例p-178-179.html"><i class="fa fa-check"></i>6.4.1 問題の例(p.178 - 179)</a></li>
+<li class="chapter" data-level="" data-path="独立な2群の比率差の検定p-180-181.html"><a href="独立な2群の比率差の検定p-180-181.html"><i class="fa fa-check"></i>6.4.2 独立な2群の比率差の検定(p.180 - 181)</a></li>
+<li class="chapter" data-level="" data-path="対応のある2群の比率差の検定p-181-183.html"><a href="対応のある2群の比率差の検定p-181-183.html"><i class="fa fa-check"></i>6.4.3 対応のある2群の比率差の検定(p.181 - 183)</a></li>
+<li class="chapter" data-level="" data-path="カイ2乗統計量p-184-187.html"><a href="カイ2乗統計量p-184-187.html"><i class="fa fa-check"></i>6.5.1 カイ2乗統計量(p.184 - 187)</a></li>
+<li class="chapter" data-level="" data-path="クラメルの連関係数とファイ係数p-187-188.html"><a href="クラメルの連関係数とファイ係数p-187-188.html"><i class="fa fa-check"></i>6.5.2 クラメルの連関係数とファイ係数(p.187 - 188)</a></li>
+<li class="chapter" data-level="" data-path="連関の検定p-188-189.html"><a href="連関の検定p-188-189.html"><i class="fa fa-check"></i>6.5.3 連関の検定(p.188 - 189)</a></li>
+<li class="chapter" data-level="" data-path="連関の検定と比率差の検定の関係p-189-190.html"><a href="連関の検定と比率差の検定の関係p-189-190.html"><i class="fa fa-check"></i>6.5.4 連関の検定と比率差の検定の関係(P.189 - 190)</a></li>
+<li class="chapter" data-level="" data-path="第6章演習問題.html"><a href="第6章演習問題.html"><i class="fa fa-check"></i>6.6 第6章演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="第8章-平均値差と連関に関する推測.html"><a href="第8章-平均値差と連関に関する推測.html"><i class="fa fa-check"></i>第8章 平均値差と連関に関する推測</a><ul>
+<li class="chapter" data-level="" data-path="データと基本統計量p-225-227.html"><a href="データと基本統計量p-225-227.html"><i class="fa fa-check"></i>8.1.1 データと基本統計量(p.225 - 227)</a></li>
+<li class="chapter" data-level="" data-path="残差への注目p-227-227.html"><a href="残差への注目p-227-227.html"><i class="fa fa-check"></i>8.1.2 残差への注目(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="部分相関係数p-227-227.html"><a href="部分相関係数p-227-227.html"><i class="fa fa-check"></i>8.1.3 部分相関係数(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="偏相関係数p-227-227.html"><a href="偏相関係数p-227-227.html"><i class="fa fa-check"></i>8.1.4 偏相関係数(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="偏回帰係数p-227-227.html"><a href="偏回帰係数p-227-227.html"><i class="fa fa-check"></i>8.2.1 偏回帰係数(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="標準偏回帰係数p-227-227.html"><a href="標準偏回帰係数p-227-227.html"><i class="fa fa-check"></i>8.2.2 標準偏回帰係数(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="最小2乗法による母数の推定p-227-227.html"><a href="最小2乗法による母数の推定p-227-227.html"><i class="fa fa-check"></i>8.3.1 最小2乗法による母数の推定(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="重相関係数p-227-227.html"><a href="重相関係数p-227-227.html"><i class="fa fa-check"></i>8.3.2 重相関係数(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="独立変数間の相関と重相関係数p-227-227.html"><a href="独立変数間の相関と重相関係数p-227-227.html"><i class="fa fa-check"></i>8.4.1 独立変数間の相関と重相関係数(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="平方和の分割p-227-227.html"><a href="平方和の分割p-227-227.html"><i class="fa fa-check"></i>8.5.1 平方和の分割(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="予測の標準誤差と自由度調整済み重相関係数p-227-227.html"><a href="予測の標準誤差と自由度調整済み重相関係数p-227-227.html"><i class="fa fa-check"></i>8.5.2 予測の標準誤差と自由度調整済み重相関係数(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="重相関係数の検定p-227-227.html"><a href="重相関係数の検定p-227-227.html"><i class="fa fa-check"></i>8.5.3 重相関係数の検定(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="重相関係数の検定p-227-227-1.html"><a href="重相関係数の検定p-227-227-1.html"><i class="fa fa-check"></i>8.5.3 重相関係数の検定(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="偏回帰係数の標準誤差を用いた検定p-227-227.html"><a href="偏回帰係数の標準誤差を用いた検定p-227-227.html"><i class="fa fa-check"></i>8.5.4 偏回帰係数の標準誤差を用いた検定(p.227 - 227)</a></li>
+<li class="chapter" data-level="" data-path="第8章演習問題.html"><a href="第8章演習問題.html"><i class="fa fa-check"></i>8.6 第8章演習問題</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">心理統計学の基礎</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="部分相関係数p.227---227" class="section level2 unnumbered">
+<h2>8.1.3 部分相関係数(p.227 - 227)</h2>
+<ul>
+<li><code>lm()</code>関数を使うと，計算結果をまとめたオブジェクトの中に残差の値も格納されます。先ほど計算した残差<span class="math inline">\(x _{2}|x _{1}\)</span>(<code>e_year</code>)を<code>lm()</code>関数を使って求めましょう。</li>
+</ul>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="部分相関係数p-227-227.html#cb27-1"></a>lm_year_Mother &lt;-<span class="st"> </span><span class="kw">lm</span>(kyocho<span class="op">$</span>year <span class="op">~</span><span class="st"> </span>kyocho<span class="op">$</span>Mother)</span></code></pre></div>
+<ul>
+<li>残差は<code>lm()</code>関数の計算結果を格納したオブジェクトの中の<code>residuals</code>にあります。</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="部分相関係数p-227-227.html#cb28-1"></a>lm_year_Mother<span class="op">$</span>residuals</span></code></pre></div>
+<pre><code>##          1          2          3          4          5          6          7 
+## -0.2791837 -0.2791837  0.5575510 -0.1159184 -0.6138776  0.2228571  1.0555102 
+##          8          9         10         11         12         13         14 
+##  0.5534694  0.2187755 -1.2791837  0.7208163  0.2187755 -0.1118367 -0.6138776 
+##         15         16         17         18         19         20         21 
+##  0.8840816 -1.1159184  1.0514286  0.2187755  1.2187755  0.0555102 -0.2791837 
+##         22         23         24         25         26         27         28 
+## -0.7771429 -0.2791837 -0.2791837  0.5493878 -0.1118367  0.3861224 -0.7812245 
+##         29         30         31         32         33         34         35 
+##  0.2187755  0.2187755 -0.9485714  0.2187755 -0.2791837  0.0555102  0.8881633 
+##         36         37         38         39         40         41         42 
+## -1.2791837 -0.7812245  0.5534694 -0.7812245 -0.2791837 -0.2791837  0.7208163 
+##         43         44         45         46         47         48         49 
+##  0.5534694 -0.1159184 -0.4465306  0.8881633 -0.6138776  1.0514286 -0.2791837 
+##         50 
+## -0.2791837</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="部分相関係数p-227-227.html#cb30-1"></a>e_year</span></code></pre></div>
+<pre><code>##  [1] -0.2791837 -0.2791837  0.5575510 -0.1159184 -0.6138776  0.2228571
+##  [7]  1.0555102  0.5534694  0.2187755 -1.2791837  0.7208163  0.2187755
+## [13] -0.1118367 -0.6138776  0.8840816 -1.1159184  1.0514286  0.2187755
+## [19]  1.2187755  0.0555102 -0.2791837 -0.7771429 -0.2791837 -0.2791837
+## [25]  0.5493878 -0.1118367  0.3861224 -0.7812245  0.2187755  0.2187755
+## [31] -0.9485714  0.2187755 -0.2791837  0.0555102  0.8881633 -1.2791837
+## [37] -0.7812245  0.5534694 -0.7812245 -0.2791837 -0.2791837  0.7208163
+## [43]  0.5534694 -0.1159184 -0.4465306  0.8881633 -0.6138776  1.0514286
+## [49] -0.2791837 -0.2791837</code></pre>
+<ul>
+<li>(8.1)式に基づいて<span class="math inline">\(x_{2} | x _{1}\)</span>と<span class="math inline">\(y\)</span>との相関係数(部分相関係数<span class="math inline">\(r _{y(2|1)}\)</span>を求めましょう。</li>
+</ul>
+<p><span class="math display">\[
+r _{y(2|1)} = \frac{r _{y2} - r_{y1}r _{12}}{\sqrt{1 - r ^{2} _{12}}} \tag{8.1}
+\]</span></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="部分相関係数p-227-227.html#cb32-1"></a>(<span class="kw">cor</span>(kyocho<span class="op">$</span>year, kyocho<span class="op">$</span>kyocho) <span class="op">-</span><span class="st"> </span>(<span class="kw">cor</span>(kyocho<span class="op">$</span>kyocho, kyocho<span class="op">$</span>Mother) <span class="op">*</span><span class="st"> </span><span class="kw">cor</span>(kyocho<span class="op">$</span>Mother, kyocho<span class="op">$</span>year))) <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">cor</span>(kyocho<span class="op">$</span>Mother, kyocho<span class="op">$</span>year)<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.2887003</code></pre>
+<ul>
+<li>先ほど計算した残差と子どもの協調性得点(<code>kyocho$kyocho</code>)の相関を求めましょう。</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="部分相関係数p-227-227.html#cb34-1"></a><span class="kw">cor</span>(lm_year_Mother<span class="op">$</span>residuals, kyocho<span class="op">$</span>kyocho)</span></code></pre></div>
+<pre><code>## [1] 0.2887003</code></pre>
+<ul>
+<li>残差を実際に求めた結果と(8.1)式に基づいて計算した結果が一致することがわかります。</li>
+</ul>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="残差への注目p-227-227.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="偏相関係数p-227-227.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
